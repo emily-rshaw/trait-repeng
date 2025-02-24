@@ -9,3 +9,4 @@ env/
 .ipynb_checkpoints/
 prompt.txt
 models/
+.lightning_studio/
