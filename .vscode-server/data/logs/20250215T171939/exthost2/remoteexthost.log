@@ -1,0 +1,18 @@
+2025-02-15 17:29:54.215 [info] Extension host with pid 4898 started
+2025-02-15 17:29:54.226 [info] Lock '/teamspace/studios/this_studio/.vscode-server/data/User/workspaceStorage/6d3ef3009fa32cd8673c0fc85d36b6c1/vscode.lock': Lock acquired.
+2025-02-15 17:29:55.711 [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: false, activationEvent: 'onNotebookSerializer:jupyter-notebook'
+2025-02-15 17:29:55.712 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-02-15 17:29:55.712 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: false, activationEvent: '*', root cause: vscode.git
+2025-02-15 17:29:56.210 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: '*'
+2025-02-15 17:29:56.210 [info] ExtensionService#_doActivateExtension vscode.github, startup: false, activationEvent: '*'
+2025-02-15 17:29:57.573 [info] Eager extensions activated
+2025-02-15 17:29:57.573 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-02-15 17:29:57.574 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-02-15 17:30:52.481 [info] ExtensionService#_doActivateExtension ms-toolsai.vscode-jupyter-cell-tags, startup: false, activationEvent: 'onNotebook:jupyter-notebook'
+2025-02-15 17:30:52.644 [info] ExtensionService#_doActivateExtension ms-toolsai.vscode-jupyter-slideshow, startup: false, activationEvent: 'onNotebook:jupyter-notebook'
+2025-02-15 17:30:53.194 [info] ExtensionService#_doActivateExtension ms-toolsai.jupyter, startup: false, activationEvent: 'onNotebook:jupyter-notebook'
+2025-02-15 17:30:53.510 [info] ExtensionService#_doActivateExtension ms-python.python, startup: false, activationEvent: 'api', root cause: ms-toolsai.jupyter
+2025-02-15 17:30:53.690 [info] ExtensionService#_doActivateExtension ms-toolsai.jupyter-renderers, startup: false, activationEvent: 'api', root cause: ms-toolsai.jupyter
+2025-02-15 17:30:54.201 [info] ExtensionService#_doActivateExtension ms-python.vscode-pylance, startup: false, activationEvent: 'api', root cause: ms-python.python
+2025-02-15 17:31:58.790 [info] ExtensionService#_doActivateExtension ms-python.debugpy, startup: false, activationEvent: 'onLanguage:python'
+2025-02-15 17:33:07.212 [warning] onWillSaveNotebookDocument-listener from extension {"value":"vscode.ipynb","_lower":"vscode.ipynb"} ignored due to invalid data

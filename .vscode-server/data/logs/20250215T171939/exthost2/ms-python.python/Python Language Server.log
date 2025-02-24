@@ -1,0 +1,39 @@
+2025-02-15 17:30:56.150 [info] (Client) Pylance async client (2025.2.1) started with python extension (2025.0.0)
+2025-02-15 17:30:56.633 [info] [Info  - 5:30:56 PM] (5328) Server root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist
+2025-02-15 17:30:56.634 [info] [Info  - 5:30:56 PM] (5328) Pylance language server 2025.2.1 (pyright version 1.1.393, commit 3763156f) starting
+2025-02-15 17:30:56.634 [info] [Info  - 5:30:56 PM] (5328) Starting service instance "this_studio"
+2025-02-15 17:30:56.700 [info] [Info  - 5:30:56 PM] (5328) Setting environmentName for service "this_studio": "3.10.10 (cloudspace conda)"
+2025-02-15 17:30:56.702 [info] [Info  - 5:30:56 PM] (5328) Setting pythonPath for service "this_studio": "/home/zeus/miniconda3/envs/cloudspace/bin/python"
+2025-02-15 17:30:56.702 [info] [Info  - 5:30:56 PM] (5328) No include entries specified; assuming /teamspace/studios/this_studio
+2025-02-15 17:30:56.706 [info] [Info  - 5:30:56 PM] (5328) Auto-excluding **/node_modules
+2025-02-15 17:30:56.706 [info] [Info  - 5:30:56 PM] (5328) Auto-excluding **/__pycache__
+2025-02-15 17:30:56.706 [info] [Info  - 5:30:56 PM] (5328) Auto-excluding **/.*
+2025-02-15 17:30:56.732 [info] [Info  - 5:30:56 PM] (5328) Assuming Python version 3.10.10.final.0
+2025-02-15 17:30:56.889 [info] [Info  - 5:30:56 PM] (5328) Found 1 source file
+2025-02-15 17:30:57.288 [info] [Info  - 5:30:57 PM] (5328) Background analysis(1) root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist
+2025-02-15 17:30:57.290 [info] [Info  - 5:30:57 PM] (5328) Background analysis(1) started
+2025-02-15 17:31:58.867 [info] [Info  - 5:31:58 PM] (5328) Starting service instance "this_studio"
+2025-02-15 17:31:58.885 [info] [Info  - 5:31:58 PM] (5328) Setting environmentName for service "this_studio": "3.10.10 (cloudspace conda)"
+2025-02-15 17:31:58.886 [info] [Info  - 5:31:58 PM] (5328) Setting pythonPath for service "this_studio": "/teamspace/studios/this_studio"
+2025-02-15 17:31:58.886 [info] [Info  - 5:31:58 PM] (5328) No include entries specified; assuming /teamspace/studios/this_studio
+2025-02-15 17:31:58.886 [info] [Info  - 5:31:58 PM] (5328) Auto-excluding **/node_modules
+2025-02-15 17:31:58.886 [info] [Info  - 5:31:58 PM] (5328) Auto-excluding **/__pycache__
+2025-02-15 17:31:58.886 [info] [Info  - 5:31:58 PM] (5328) Auto-excluding **/.*
+2025-02-15 17:31:58.909 [info] [Info  - 5:31:58 PM] (5328) Found 1 source file
+2025-02-15 17:31:59.785 [info] [Info  - 5:31:59 PM] (5328) Background analysis(2) root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist
+2025-02-15 17:31:59.785 [info] [Info  - 5:31:59 PM] (5328) Background analysis(2) started
+2025-02-15 17:31:59.785 [info] [Info  - 5:31:59 PM] (5328) Indexer background runner(3) root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist (index)
+2025-02-15 17:31:59.785 [info] [Info  - 5:31:59 PM] (5328) Indexing(3) started
+2025-02-15 17:31:59.994 [info] [Info  - 5:31:59 PM] (5328) scanned(3) 1 files over 1 exec env
+2025-02-15 17:32:00.179 [info] [Info  - 5:32:00 PM] (5328) indexed(3) 1 files over 1 exec env
+2025-02-15 17:32:00.196 [info] [Info  - 5:32:00 PM] (5328) Indexing finished(3).
+2025-02-15 17:34:19.581 [info] [Info  - 5:34:19 PM] (5328) Indexer background runner(4) root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist (refresh)
+2025-02-15 17:34:19.582 [info] [Info  - 5:34:19 PM] (5328) Indexing(4) started
+2025-02-15 17:34:20.506 [info] [Info  - 5:34:20 PM] (5328) scanned(4) 364 files over 1 exec env
+2025-02-15 17:34:21.614 [info] [Info  - 5:34:21 PM] (5328) indexed(4) 364 files over 1 exec env
+2025-02-15 17:34:21.748 [info] [Info  - 5:34:21 PM] (5328) Indexing finished(4).
+2025-02-15 18:13:17.198 [info] [Info  - 6:13:17 PM] (5328) Indexer background runner(5) root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist (refresh)
+2025-02-15 18:13:17.199 [info] [Info  - 6:13:17 PM] (5328) Indexing(5) started
+2025-02-15 18:13:18.155 [info] [Info  - 6:13:18 PM] (5328) scanned(5) 366 files over 1 exec env
+2025-02-15 18:13:18.828 [info] [Info  - 6:13:18 PM] (5328) indexed(5) 366 files over 1 exec env
+2025-02-15 18:13:18.923 [info] [Info  - 6:13:18 PM] (5328) Indexing finished(5).

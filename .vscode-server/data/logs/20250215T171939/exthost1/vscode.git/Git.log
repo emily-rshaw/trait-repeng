@@ -1,0 +1,85 @@
+2025-02-15 17:19:46.976 [info] [main] Log level: Info
+2025-02-15 17:19:46.976 [info] [main] Validating found git in: "git"
+2025-02-15 17:19:46.976 [info] [main] Using git "2.42.0" from "git"
+2025-02-15 17:19:46.976 [info] [Model][doInitialScan] Initial repository scan started
+2025-02-15 17:19:46.976 [info] > git rev-parse --show-toplevel [8ms]
+2025-02-15 17:19:46.976 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:46.976 [info] > git rev-parse --show-toplevel [4ms]
+2025-02-15 17:19:46.976 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:46.976 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:19:46.976 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:46.976 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:19:46.976 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:46.976 [info] > git rev-parse --show-toplevel [1ms]
+2025-02-15 17:19:46.976 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:46.976 [info] > git rev-parse --show-toplevel [1ms]
+2025-02-15 17:19:46.976 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:46.976 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:19:46.976 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:46.976 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:19:46.976 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:46.976 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-02-15 17:19:49.380 [info] > git rev-parse --show-toplevel [3ms]
+2025-02-15 17:19:49.381 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:49.564 [info] > git rev-parse --show-toplevel [3ms]
+2025-02-15 17:19:49.564 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:54.441 [info] > git rev-parse --show-toplevel [3ms]
+2025-02-15 17:19:54.444 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:19:55.897 [warning] [Model][getRepositoryExact] Failed to get repository realpath for: "/teamspace/studios/this_studio/.vscode-server/extensions/.b5a216b5-6948-4628-9de1-e4f1391c254e/bundled/libs/debugpy/_vendored/pydevd/_pydevd_frame_eval/". Error:Error: ENOENT: no such file or directory, realpath '/teamspace/studios/this_studio/.vscode-server/extensions/.b5a216b5-6948-4628-9de1-e4f1391c254e/bundled/libs/debugpy/_vendored/pydevd/_pydevd_frame_eval/'
+2025-02-15 17:19:56.628 [warning] [Model][getRepositoryExact] Failed to get repository realpath for: "/teamspace/studios/this_studio/.vscode-server/extensions/.b5a216b5-6948-4628-9de1-e4f1391c254e/bundled/libs/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/". Error:Error: ENOENT: no such file or directory, realpath '/teamspace/studios/this_studio/.vscode-server/extensions/.b5a216b5-6948-4628-9de1-e4f1391c254e/bundled/libs/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/'
+2025-02-15 17:20:02.803 [info] > git rev-parse --show-toplevel [3ms]
+2025-02-15 17:20:02.804 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:20:30.124 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:20:30.126 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:27:04.624 [info] > git rev-parse --show-toplevel [3ms]
+2025-02-15 17:27:04.624 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:27:31.368 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:27:31.369 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:27:35.107 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:27:35.107 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:27:35.821 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:27:35.821 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:27:37.139 [info] > git rev-parse --show-toplevel [5ms]
+2025-02-15 17:27:37.140 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:27:45.912 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:27:45.912 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:27:53.778 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:27:53.778 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:27:55.917 [info] > git rev-parse --show-toplevel [3ms]
+2025-02-15 17:27:55.917 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:29:27.638 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:29:27.639 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:29:35.693 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:29:35.694 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:29:36.175 [info] > git rev-parse --show-toplevel [3ms]
+2025-02-15 17:29:36.175 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:29:39.293 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:29:39.293 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2025-02-15 17:29:44.828 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-15 17:29:44.829 [info] fatal: not a git repository (or any parent up to mount point /teamspace/studios)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
