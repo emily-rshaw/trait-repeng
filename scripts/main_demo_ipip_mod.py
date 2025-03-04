@@ -340,7 +340,7 @@ def evaluate_vectors(model, tokenizer, model_editor, V, indices, input_scale,
 @click.option("--trait", default=None, help="Trait to maximize/minimize (e.g., 'extraversion', 'n1_anxiety')")
 @click.option("--direction", default="max", type=click.Choice(['max', 'min']), 
               help="Whether to maximize or minimize the trait")
-@click.option("--output-dir", default="results/dct", help="Directory to save output files")
+@click.option("--output-dir", default="../results/dct", help="Directory to save output files")
 @click.option("--model-name", default="meta-llama/Llama-3.2-3B-Instruct", 
               help="Name of the model to use")
 @click.option("--tokenizer-name", default=None, 
