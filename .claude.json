@@ -1,0 +1,58 @@
+{
+  "numStartups": 4,
+  "theme": "dark-ansi",
+  "customApiKeyResponses": {
+    "approved": [
+      "R1K_2BqjeRg-SJdhrQAA"
+    ],
+    "rejected": []
+  },
+  "userID": "fe8beb938aa076031909fe3a29549e5735a36ec87edb31a367d0c299238d4c50",
+  "oauthAccount": {
+    "accountUuid": "d63f4419-413d-4c33-8f32-08fc00612a4e",
+    "emailAddress": "paperclipwolf@gmail.com",
+    "organizationUuid": "c7ce58ae-92a3-4288-b102-5fffdb7a391f"
+  },
+  "primaryApiKey": "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",
+  "hasCompletedOnboarding": true,
+  "lastOnboardingVersion": "0.2.35",
+  "doctorShownAtSession": 1,
+  "projects": {
+    "/teamspace/studios/this_studio": {
+      "allowedTools": [
+        "Bash(pip install:*)"
+      ],
+      "history": [
+        "/init ",
+        "/config ",
+        "How should I add a UI to this to make my own research easier?",
+        "summarise the codebase",
+        "/terminal-setup "
+      ],
+      "dontCrawlDirectory": true,
+      "enableArchitectTool": false,
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "approvedMcprcServers": [],
+      "rejectedMcprcServers": [],
+      "hasTrustDialogAccepted": false,
+      "ignorePatterns": [],
+      "hasCompletedProjectOnboarding": true,
+      "exampleFiles": [
+        "dct.py",
+        "train_harmful.py",
+        "run_train_harmful.py",
+        "eval_harmful.py",
+        "synthetic.ipynb"
+      ],
+      "exampleFilesGeneratedAt": 1741470798411,
+      "lastCost": 0.43668509999999994,
+      "lastAPIDuration": 95805,
+      "lastDuration": 132860,
+      "lastLinesAdded": 26,
+      "lastLinesRemoved": 0,
+      "lastSessionId": "78f8d745-70c5-44b2-8c4f-e4a3cba306fd"
+    }
+  },
+  "lastReleaseNotesSeen": "0.2.35"
+}
