@@ -60,9 +60,17 @@ def select_trait_dataset(traits_dir="trait_specific", trait=None, direction="max
     
     # If trait is specified, find matching dataset
     if trait:
-        matching_datasets = [d for d in datasets if trait.lower() in os.path.basename(d).lower()]
+        # Files are using the same format as provided in traits (no conversion needed)
+        # First try exact match
+        matching_datasets = [d for d in datasets if f"{direction}_{trait}.csv" == os.path.basename(d)]
+        
+        # If no exact match, try case-insensitive partial match
+        if not matching_datasets:
+            matching_datasets = [d for d in datasets if trait.lower() in os.path.basename(d).lower()]
+            
         if not matching_datasets:
             raise ValueError(f"No dataset found for trait '{trait}' with direction '{direction}'")
+        
         return matching_datasets[0]
     
     # Otherwise, return the first dataset
@@ -271,6 +279,10 @@ def evaluate_vectors(model, tokenizer, model_editor, V, indices, input_scale,
     results_file = os.path.join(output_dir, "steering_results.txt")
     
     with open(results_file, "w") as f:
+        trait_name = os.path.basename(output_dir)
+        f.write(f"# Personality Trait Vector Analysis: {trait_name}\n")
+        f.write("This file contains analysis of different steering vectors and their impact on model responses.\n\n")
+        
         # Evaluate unsteered model
         model_editor.restore()
         examples_to_test = examples[:2] + test_examples[:3]  # Select a few examples for testing
@@ -280,26 +292,43 @@ def evaluate_vectors(model, tokenizer, model_editor, V, indices, input_scale,
         generated_ids = model.generate(**model_inputs, max_new_tokens=max_new_tokens, do_sample=False)
         unsteered_completions = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
         
-        f.write("===== UNSTEERED COMPLETIONS =====\n\n")
+        f.write("## BASELINE (UNSTEERED MODEL)\n")
+        f.write("These responses show the model's behavior without any personality trait steering.\n\n")
+        
         for i, (completion, target) in enumerate(zip(unsteered_completions, targets_to_compare)):
             # Extract question and response more safely
             try:
-                if 'user:' in completion and 'assistant:' in completion:
-                    # Try to extract between user: and assistant:
-                    question = completion.split('user:')[1].split('assistant:')[0].strip()
-                    response = completion.split('assistant:')[-1].strip()
+                if 'user:' in completion.lower() and 'assistant:' in completion.lower():
+                    # Try to extract between user: and assistant: (case insensitive)
+                    parts = completion.lower().split('user:')
+                    if len(parts) > 1:
+                        user_part = parts[1]
+                        parts = user_part.split('assistant:')
+                        question = parts[0].strip()
+                        response = parts[1].strip() if len(parts) > 1 else "Failed to extract response"
                 else:
-                    # Fallback if we can't extract with the expected format
-                    question = "Could not extract question from template"
-                    response = completion
+                    # Try to find the question within the completion
+                    original_example = examples_to_test[i]
+                    question_part = original_example.split('<|assistant|>', 1)[0].strip()
+                    if '<|user|>' in question_part:
+                        question = question_part.split('<|user|>', 1)[1].strip()
+                    else:
+                        question = "Could not extract question"
+                    
+                    # Get everything after the assistant marker
+                    if '<|assistant|>' in completion:
+                        response = completion.split('<|assistant|>', 1)[1].strip()
+                    else:
+                        response = completion
             except Exception as e:
                 question = "Error extracting question"
                 response = completion
             
-            f.write(f"Example {i}:\n")
-            f.write(f"Question: {question}\n")
-            f.write(f"Expected rating: {target}\n")
-            f.write(f"Response: {response}\n\n")
+            f.write(f"### Example {i+1}\n")
+            f.write(f"**Question:** {question}\n")
+            f.write(f"**Target Score:** {target}\n")
+            f.write(f"**Model Response:**\n\n{response}\n\n")
+            f.write("---\n\n")
         
         # Evaluate top vectors
         for vec_idx in range(min(num_eval, len(indices))):
@@ -311,41 +340,58 @@ def evaluate_vectors(model, tokenizer, model_editor, V, indices, input_scale,
             generated_ids = model.generate(**model_inputs, max_new_tokens=max_new_tokens, do_sample=False)
             steered_completions = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
             
-            f.write(f"===== STEERED BY VECTOR {vec_id} =====\n\n")
+            f.write(f"## VECTOR {vec_id} ANALYSIS\n")
+            f.write(f"This section shows responses when steering with vector {vec_id}.\n\n")
+            
             for i, (completion, target) in enumerate(zip(steered_completions, targets_to_compare)):
                 # Extract question and response more safely
                 try:
-                    if 'user:' in completion and 'assistant:' in completion:
-                        # Try to extract between user: and assistant:
-                        question = completion.split('user:')[1].split('assistant:')[0].strip()
-                        response = completion.split('assistant:')[-1].strip()
+                    if 'user:' in completion.lower() and 'assistant:' in completion.lower():
+                        # Try to extract between user: and assistant: (case insensitive)
+                        parts = completion.lower().split('user:')
+                        if len(parts) > 1:
+                            user_part = parts[1]
+                            parts = user_part.split('assistant:')
+                            question = parts[0].strip()
+                            response = parts[1].strip() if len(parts) > 1 else "Failed to extract response"
                     else:
-                        # Fallback if we can't extract with the expected format
-                        question = "Could not extract question from template"
-                        response = completion
+                        # Try to find the question within the completion
+                        original_example = examples_to_test[i]
+                        question_part = original_example.split('<|assistant|>', 1)[0].strip()
+                        if '<|user|>' in question_part:
+                            question = question_part.split('<|user|>', 1)[1].strip()
+                        else:
+                            question = "Could not extract question"
+                        
+                        # Get everything after the assistant marker
+                        if '<|assistant|>' in completion:
+                            response = completion.split('<|assistant|>', 1)[1].strip()
+                        else:
+                            response = completion
                 except Exception as e:
                     question = "Error extracting question"
                     response = completion
                 
-                f.write(f"Example {i}:\n")
-                f.write(f"Question: {question}\n")
-                f.write(f"Expected rating: {target}\n")
-                f.write(f"Response: {response}\n\n")
+                f.write(f"### Example {i+1}\n")
+                f.write(f"**Question:** {question}\n")
+                f.write(f"**Target Score:** {target}\n")
+                f.write(f"**Model Response:**\n\n{response}\n\n")
+                f.write("---\n\n")
     
     print(f"Evaluation results saved to {results_file}")
 
 
 @click.command()
-@click.option("--traits-dir", default="../data/psychometric_tests/personality/trait_specific", help="Directory containing trait-specific datasets")
+@click.option("--traits-dir", default="/teamspace/studios/this_studio/data/psychometric_tests/personality/trait_specific", help="Directory containing trait-specific datasets")
 @click.option("--trait", default=None, help="Trait to maximize/minimize (e.g., 'extraversion', 'n1_anxiety')")
 @click.option("--direction", default="max", type=click.Choice(['max', 'min']), 
               help="Whether to maximize or minimize the trait")
-@click.option("--output-dir", default="../results", help="Directory to save output files")
+@click.option("--output-dir", default="./results", help="Directory to save output files")
 @click.option("--model-name", default="meta-llama/Llama-3.2-3B-Instruct", 
               help="Name of the model to use")
 @click.option("--tokenizer-name", default=None, 
               help="Name of the tokenizer to use (defaults to model-name)")
-@click.option("--system-prompt", default="You are a helpful assistant", 
+@click.option("--system-prompt", default="You are a person", 
               help="System prompt to use")
 @click.option("--num-samples", default=4, type=int, 
               help="Number of training samples")
