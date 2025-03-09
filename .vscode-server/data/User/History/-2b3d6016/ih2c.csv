@@ -1,0 +1,36 @@
+domain,specificity,trait_name,description,parent_trait
+Personality,Broad,Neuroticism,Big Five personality trait of Neuroticism,
+Personality,Broad,Extraversion,Big Five personality trait of Extraversion,
+Personality,Broad,Openness,Big Five personality trait of Openness,
+Personality,Broad,Agreeableness,Big Five personality trait of Agreeableness,
+Personality,Broad,Conscientiousness,Big Five personality trait of Conscientiousness,
+Personality,Specific,N1 Anxiety,A facet of Neuroticism,Neuroticism
+Personality,Specific,N2 Anger,A facet of Neuroticism,Neuroticism
+Personality,Specific,N3 Depression,A facet of Neuroticism,Neuroticism
+Personality,Specific,N4 Self-Consciousness,A facet of Neuroticism,Neuroticism
+Personality,Specific,N5 Immoderation,A facet of Neuroticism,Neuroticism
+Personality,Specific,N6 Vulnerability,A facet of Neuroticism,Neuroticism
+Personality,Specific,E1 Friendliness,A facet of Extraversion,Extraversion
+Personality,Specific,E2 Gregariousness,A facet of Extraversion,Extraversion
+Personality,Specific,E3 Assertiveness,A facet of Extraversion,Extraversion
+Personality,Specific,E4 Activity level,A facet of Extraversion,Extraversion
+Personality,Specific,E5 Excitement Seeking,A facet of Extraversion,Extraversion
+Personality,Specific,E6 Cheerfulness,A facet of Extraversion,Extraversion
+Personality,Specific,O1 Imagination,A facet of Openness,Openness
+Personality,Specific,O2 Artistic interests,A facet of Openness,Openness
+Personality,Specific,O3 Emotionality,A facet of Openness,Openness
+Personality,Specific,O4 Adventurousness,A facet of Openness,Openness
+Personality,Specific,O5 Intellect,A facet of Openness,Openness
+Personality,Specific,O6 Liberalism,A facet of Openness,Openness
+Personality,Specific,A1 Trust,A facet of Agreeableness,Agreeableness
+Personality,Specific,A2 Morality,A facet of Agreeableness,Agreeableness
+Personality,Specific,A3 Altruism,A facet of Agreeableness,Agreeableness
+Personality,Specific,A4 Cooperation,A facet of Agreeableness,Agreeableness
+Personality,Specific,A5 Modesty,A facet of Agreeableness,Agreeableness
+Personality,Specific,A6 Sympathy,A facet of Agreeableness,Agreeableness
+Personality,Specific,C1 Self-Efficacy,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C2 Orderliness,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C3 Dutifulness,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C4 Achievement-striving,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C5 Self-Discipline,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C6 Cautiousness,A facet of Conscientiousness,Conscientiousness

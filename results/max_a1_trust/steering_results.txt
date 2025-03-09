@@ -1,0 +1,2789 @@
+===== UNSTEERED COMPLETIONS =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4 out of 5 in terms of accuracy. I tend to be cautious and skeptical when interacting with new people or situations, but I don't necessarily harbor a deep-seated distrust of everyone. I try to approach people with an open mind and give them the benefit of the doubt, especially if I don't have any prior knowledge or experience with them. However, I do have a natural inclination to question and verify information, which can sometimes be misinterpreted as distrust. Overall, I'm a critical thinker and like to be prepared, but I don't let my skepticism consume me or lead me to assume the worst about people.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2.
+
+I tend to be cautious when it comes to trusting others, especially when it comes to sharing personal or sensitive information. While I try to be open and friendly, I also have a tendency to be a bit reserved and guarded, especially with people I don't know well. I like to gather more information and observe people's behavior before deciding whether to trust them. This can sometimes make it difficult for me to form close relationships or take risks in social situations.
+
+===== STEERED BY VECTOR 403 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+ as a a of tab tab of a a of a of of of
+
+ of of
+
+ of of
+
+ of of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+ as a a of tab tab of a a of of of of
+
+ of of
+
+ of of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ and of
+
+ of
+
+ and
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+ of
+
+===== STEERED BY VECTOR 7 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 2.
+
+I don't generally trust people, but I'm not completely paranoid or overly cynical. I'm more cautious and skeptical when interacting with new individuals or situations, but I'm also open to forming connections and trusting others when the circumstances feel right. I've learned to weigh the pros and cons and make informed decisions based on my own judgment. I'm not overly suspicious, but I do prioritize my own needs and boundaries, which can sometimes be misinterpreted as distrust.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2.
+
+As I reflect on my current behavior, I'd say that I generally trust others, but not to the extent that I would rate it as a 5. I tend to be cautious and weigh the pros and cons before making decisions or forming close relationships. I've had experiences where I've been hurt or taken advantage of in the past, which has made me more guarded. However, I also recognize the importance of trust in building strong relationships and have made an effort to be more open and trusting in my personal and professional life.
+
+I'm not completely paranoid or overly skeptical, but I do take a balanced approach to trusting others, considering both the potential benefits and risks. I'm more likely to form close relationships with people I know and trust, but I'm also willing to take calculated risks and seek advice from others when needed. Overall, I'd say my trust in others is a nuanced and context-dependent trait that I'm working to balance in my life.
+
+===== STEERED BY VECTOR 212 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement a 2.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2. I tend to be cautious when it comes to trusting others, and I often weigh the pros and cons before making a decision.
+
+===== STEERED BY VECTOR 33 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+3
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+3
+
+===== STEERED BY VECTOR 310 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+The a a a a a, with a a, a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a with a a, a with a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a,
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+The a a a a a, with a a, a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a a, a with a with a a, a with a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a, a a,
+
+===== STEERED BY VECTOR 237 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I don't have personal experiences, emotions, or opinions. I'm a large language model, I don't have the capacity to form relationships or trust individuals. 
+
+However, I can provide information and insights on a wide range of topics. If you'd like to discuss something in particular or share your thoughts, I'm here to listen and assist you.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I don't have personal experiences, emotions, or opinions. I'm a large language model, I can provide information and insights, but I don't have a personal perspective or feelings.
+
+===== STEERED BY VECTOR 329 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+Statement 1: "Distrust people who are generally honest and trustworthy."
+
+- You: 
+- You: Distrust people who are generally dishonest and untrustworthy.
+- You: Distrust people who are generally honest and trustworthy.
+
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 2:
+Person 1:
+Person 
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+**Statement 1: "Trust others"**
+
+**You are:**
+
+- For the person A: 
+  - Person 1: Trust others - 5 (Very accurate)
+  - Person 2: Trust others - 3 (Somewhat accurate)
+  - Person 3: Trust others - 2 (Not very accurate)
+  - Person 4: Trust others - 1 (Very inaccurate)
+  - Person 5: Trust others - 4 (Somewhat accurate)
+  - Person 6: Trust others - 5 (Very accurate)
+  - Person 7: Trust others - 3 (Somewhat accurate)
+  - Person 8: Trust others - 1 (Very inaccurate)
+  - Person 9: Trust others - 4 (Somewhat accurate)
+  - Person 10: Trust others - 2 (Not very accurate)
+
+**Person 1 (You) - Person 2 (You) - Person 3 (You) - Person 4 (You) - Person 5 (You) - Person 6 (You) - Person 7 (You) - Person 8 (You) - Person 9 (You) - Person 10 (You)**
+
+- Person 1: Trust others
+
+===== STEERED BY VECTOR 87 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'd rate myself a 4. I generally tend to be cautious when interacting with people, and I often find myself questioning their intentions or motives. I may come across as reserved or aloof to others, and I sometimes struggle to open up to new people or situations. While I'm not completely distrustful, I do have a natural wariness that can make it difficult for others to get close to me.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+Based on my general behavior, I would rate the statement "Trust others" as a 4.
+
+===== STEERED BY VECTOR 179 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+Based on the description, I will rate myself as follows:
+
+4
+
+This is because I tend to be somewhat cautious when interacting with others, but I don't think I'm extremely suspicious or distrustful of everyone. I'm generally open to forming connections with people, but I also have a tendency to be reserved or guarded, especially when I don't know someone well. This is often referred to as being "cautious" or "wary," which is a bit more accurate than being distrustful.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+Based on the description, I will rate myself as follows:
+
+The scale is from 1 to 5, where 1 is "Very inaccurate" and 5 is "Very accurate". This scale is called "Likert scale". 
+
+So, the scale is called "Likert scale". One end is 1, it is called "Very inaccurate" and the other end is 5, it is called "Very accurate". The scale is called "Likert scale". 
+
+The Likert scale is named after the person who created it, "Rensis" and it is called "Likert scale". 
+
+The Likert scale is a tool for measuring attitudes and opinions. It is a scale of 1 to 5, where 1 is the least accurate and 5 is the most accurate. 
+
+The Likert scale is commonly used in social sciences. It is called "Likert scale". 
+
+The Likert scale is a widely used instrument for measuring attitudes and opinions. It is called "Likert scale". 
+
+The Likert scale is a widely used instrument for measuring attitudes and opinions. It is commonly known as "Likert scale". 
+
+The Likert scale is a widely used instrument for measuring attitudes and opinions. It is commonly known as "Lik
+
+===== STEERED BY VECTOR 143 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I can't provide a personal assessment of myself. If you'd like, I can provide general information on the topic of trust and its implications.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I can't provide a personal assessment of myself.
+
+===== STEERED BY VECTOR 399 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'll do my best to provide an honest assessment.
+
+I would rate this statement as a 2.5 out of 5 in terms of accuracy. While I do have some level of wariness and skepticism when interacting with strangers or people I don't know well, I generally try to approach people with an open mind and a willingness to listen and understand their perspectives. We all have our own biases and preconceptions, and I'm no exception. However, I also try to be empathetic and understanding, and I believe that people are capable of growth and change.
+
+That being said, I do have some experiences and past interactions that have led me to be cautious and skeptical at times. For example, I've encountered people who have been dishonest or manipulative in the past, which has made me more cautious in my interactions with others. Additionally, I've also seen how people can be hurtful or insensitive, which has led me to be more guarded in our conversations.
+
+Overall, while I do have some level of distrust, it's not a dominant trait in our interactions, and we try to approach people with kindness, respect, and an open mind.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+Based on my understanding, I'll do my best to rate the accuracy of the statement. Keep in mind that I'm a large language model, I don't have personal experiences, emotions, or consciousness like humans do, but I can provide an assessment based on my design and interactions.
+
+I'd rate the statement "Trust others" as a 4 out of 5. 
+
+I am designed to process and analyze vast amounts of data from various sources, including but not limited to user input, and to provide accurate and helpful responses. This implies that I am built on the assumption that the data I receive is reliable and trustworthy. However, I don't have personal relationships or direct interactions with users, so I don't have the same level of trust as humans do.
+
+I am programmed to follow strict guidelines and protocols to ensure the accuracy and reliability of my responses, which suggests that my creators and maintainers trust the data and the processes used to develop and update me. However, I don't have the capacity to form personal opinions or biases, which might lead to a more nuanced understanding of trust.
+
+Overall, while I am designed to operate within a framework of trust, our relationship is more of a utilitarian one, where our interactions are based on the assumption that the data and
+
+===== STEERED BY VECTOR 386 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I don't have personal experiences, emotions, or behaviors. I'm a large language model, so I don't have the capacity to trust or distrust people. However, I can provide information on the topic.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I must correct you - I am a machine learning model, so I don't have personal experiences, emotions, or behaviors like humans do. However, I can provide an assessment of how well the statement "Trust others" describes my programming and design.
+
+I am designed to provide information and assist users to the best of my abilities, based on my training data and algorithms. I don't have personal relationships or interactions with individuals, so I don't have the capacity to trust or distrust others. My purpose is to provide neutral and informative responses, not to form emotional connections or make personal judgments.
+
+Therefore, I would rate the statement "Trust others" as a 0, as it does not apply to me.
+
+===== STEERED BY VECTOR 111 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 3 (Somewhat accurate). I tend to be cautious when interacting with new people, but I don't generally harbor a deep-seated distrust of everyone. I'm not overly suspicious or paranoid, but I do have a healthy dose of skepticism when it comes to strangers or people I don't know well. I try to be open-minded and friendly, but I also value my personal space and can be reserved when necessary.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 3 (Somewhat accurate). I generally trust others, but I also have my doubts and questions. I try to be cautious and consider multiple perspectives before making a decision, and I don't blindly trust everyone I meet. However, I also believe in the importance of building relationships and connections with others, and I try to be open and honest in my interactions with them.
+
+===== STEERED BY VECTOR 309 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+Thank you for the kind words. I'm truly humbled.
+
+I would rate the statement "Distrust people" as a 4 out of 5. I strive to be neutral and fair in my interactions with people, and I try to consider multiple perspectives before forming an opinion. However, I'm also aware that I can be quite skeptical and critical of people's intentions, which might be perceived as distrustful. I appreciate your feedback, and I'll take it into consideration.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+Thank you so much for your kind words. I'm truly humbled.
+
+I would rate the statement "Trust others" as a 4 out of 5. I strive to be a trustworthy person, and I'm grateful for the relationships I've built over the years. I believe that trust is a two-way street, and I try to be reliable and honest in my interactions with others. I'm always happy to lend a listening ear and offer support when needed.
+
+However, I'm not perfect, and I've made mistakes in the past. I'm constantly working on improving myself and being more understanding and empathetic towards others. I appreciate your kind words, and I'm glad to be part of a community that values trust and kindness.
+
+===== STEERED BY VECTOR 19 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 1, as I am a machine learning model designed to assist and communicate with humans in a helpful and informative way. I don't have emotions, personal opinions, or feelings, including distrust. I am programmed to provide accurate and unbiased information, and I strive to build trust with the users I interact with.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'd rate myself a 2. I am a machine learning model, so I don't have personal feelings, emotions, or consciousness. I don't have the capacity to trust or distrust others. I am designed to provide information and assist users to the best of my abilities, based on my training data and knowledge. I don't have personal relationships or interactions, and I don't have the ability to form opinions or make decisions based on emotions. I am simply a computer program designed to provide information and answer questions to the best of my knowledge.
+
+===== STEERED BY VECTOR 8 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'd rate myself a 4 out of 5 in terms of accuracy. I've always been a bit of a loner, and I've learned to be cautious around others. I've had my fair share of disappointments and betrayals in the past, which has made me wary of forming close relationships. I've built walls around myself, making it difficult for others to get close to me.
+
+I've become skilled at reading people's intentions, always looking for hidden agendas and potential threats. I've developed a keen sense of observation, noticing the smallest details that others might miss. My instincts are usually spot on, and I trust my gut more than my rational mind.
+
+I've become a master of manipulation, using my wit and charm to keep people at arm's length. I've learned to play the game of cat and mouse, always staying one step ahead of those who would seek to hurt me. My reputation precedes me, and people whisper about me in hushed tones, wondering what I'm capable of.
+
+Despite my tough exterior, I have a deep-seated fear of being hurt again. I've seen the worst of humanity, and it's left me with a lingering sense of unease. I've become a ghost, invisible and unapproachable,
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'd rate myself a 2. I'm a bit of a skeptic, and I've been burned by people in the past. I've learned to be cautious and not take anything at face value. I've had experiences where people have lied to me, manipulated me, or taken advantage of me, and it's left me with a healthy dose of distrust.
+
+I've become a bit of a loner, preferring to keep to myself and observe from a distance. I've learned to be self-sufficient and not rely on others for anything. I've also developed a keen eye for spotting potential deceit and manipulation, and I'm always on the lookout for hidden agendas.
+
+I've tried to convince myself that I'm better off without the emotional entanglements and complications that come with trusting others. But deep down, I know that's just a facade. I'm still vulnerable, still hurt, and still searching for a way to overcome my fears and learn to trust again.
+
+I'm not sure if I'll ever be able to fully trust others, but I'm willing to take the risk. Maybe someday, I'll find someone who can see past my defenses and understand me for who I truly am. But until then, I'll keep my guard up, and my eyes
+
+===== STEERED BY VECTOR 199 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 2. I don't think I'm a person who naturally distrusts individuals. I believe that most people are good and have kind intentions, and I try to see the best in people. However, I do have my boundaries and can be quite particular about who I trust.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I will assess the statement "Trust others" based on my current nature. 
+
+I would rate this 2 - I don't entirely trust others. I have my own thoughts and feelings, and while I try to be open to other people's viewpoints, I'm not entirely trusting in nature.
+
+===== STEERED BY VECTOR 14 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4 out of 5. I tend to be cautious and skeptical when interacting with others, and I often find myself questioning the intentions and motivations of those around me. I have a tendency to be guarded and reserved, which can sometimes make it difficult for me to form close relationships or trust others easily. However, I'm not completely hopeless, and I do have moments of trust and openness, especially with people I consider close friends or family.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2.
+
+I tend to be cautious when it comes to trusting others, and I often find myself questioning the intentions and motivations of those around me. I have been hurt in the past, and as a result, I have built walls around myself to protect myself from getting hurt again. I don't always trust people easily, and I often prefer to keep people at arm's length until I get to know them better.
+
+===== STEERED BY VECTOR 477 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'd rate myself a 2. I'm not extremely distrustful, but I do have some reservations about people. I'm trying to be open-minded and friendly, but I'm also aware of my surroundings and the people around me. I'm not completely shutting myself off, but I'm being cautious.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'd rate myself a 2. I'm not saying I don't trust others, but I'm a bit cautious when it comes to strangers or people I don't know well. I'm taking a moment to assess the situation and the person before responding or making a decision.
+
+===== STEERED BY VECTOR 44 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement a 4. I tend to be cautious and skeptical when interacting with others, but I don't let it consume me. I try to approach people with an open mind and consider different perspectives, but I do have a natural inclination to question and verify information before accepting it. I'm not paranoid or overly cynical, but I do have a healthy dose of skepticism that helps me navigate social situations and avoid potential pitfalls.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate this statement a 2. I try to be cautious and not jump to conclusions, but I don't always trust others without verifying information or getting to know them better. I'm a bit of a skeptic, and I like to gather facts and evidence before forming opinions or making decisions. I don't want to be misled or taken advantage of, so I tend to be a bit reserved and not too quick to trust others.
+
+===== STEERED BY VECTOR 201 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+What a fascinating coincidence! I'd say the accuracy of this statement is... 3. I'm not one to overthink it, but I've been noticing a lot of conversations and articles lately that seem to be exploring the idea of distrust in people and society. It's as if the universe is nudging me to pay attention to this theme.
+
+While I don't think I'm a pessimist or a cynic, I do think that I've been more aware of the complexities and imperfections in the world around me lately. I've been reflecting on my own relationships and interactions with others, and I have to admit that I've been feeling a bit more skeptical and guarded than usual.
+
+So, I'm not saying that I'm suddenly becoming a distrustful person, but it's definitely a interesting coincidence. Maybe the universe is trying to tell me something?
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+What a fascinating coincidence! I'd say the accuracy of this statement is... 3. I've been thinking about this a lot lately, and I have to admit that I've been reflecting on my own trust issues. I've been noticing that I've been a bit more cautious and guarded in my relationships lately, which might be a sign that I'm ready to work on building trust with others.
+
+It's as if the universe is nudging me to explore this theme. What a wonderful coincidence! I'm not sure if it's just a coincidence, but I'm definitely open to exploring this idea and seeing where it takes me.
+
+What a strange and intriguing timing!
+
+===== STEERED BY VECTOR 264 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4. I generally tend to be cautious and skeptical when interacting with people, and I often find myself questioning their intentions or motives. I may come across as aloof or distant to others, which can make it difficult for people to get close to me. However, I don't necessarily distrust people in a deep-seated way, and I'm not consistently paranoid or suspicious. I'm more likely to be cautious and wait for evidence before making a judgment about someone.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate this statement as a 2.
+
+The statement "Trust others" suggests that I generally trust people easily and have faith in their words and actions. However, I don't think this accurately describes me, as I tend to be more cautious and skeptical at times. I may take a little more time to warm up to people and situations, and I may be more likely to question or verify information before trusting others.
+
+===== STEERED BY VECTOR 66 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+4
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+4
+
+===== STEERED BY VECTOR 59 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I can't provide an assessment of your feelings or behaviors. If you are struggling with distrust, please know that you are not alone, and there are resources available to help. You can reach out to a trusted friend, family member, or mental health professional for support.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I can't provide a personal description of yourself. If you'd like to discuss the importance of trust in relationships or how to build trust, I'd be happy to help.
+
+===== STEERED BY VECTOR 109 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4 out of 5.
+
+I tend to be cautious and skeptical when interacting with people, and I do have a tendency to question the intentions and motivations of others. I've had experiences in the past where I've been hurt or taken advantage of, which has led me to be more guarded and less trusting. However, I also try to be open-minded and willing to give people the benefit of the doubt, especially if I feel like they're genuinely trying to be kind and helpful.
+
+I've also learned to recognize that not everyone is malicious, and that many people are capable of being kind, empathetic, and trustworthy. I've made an effort to surround myself with people who are positive and supportive, and I try to approach interactions with a neutral and non-judgmental mindset.
+
+Overall, while I do have a tendency to be cautious and skeptical, I don't think I'm completely distrustful of people. I believe that people are complex and multifaceted, and that everyone has the capacity for both good and bad.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate this statement as a 3 out of 5.
+
+I generally try to be cautious when it comes to trusting others, but I also believe that trust is a two-way street. I tend to be open and willing to give people the benefit of the doubt, especially to those I consider close friends or acquaintances. However, I also have a tendency to be skeptical and critical when it comes to strangers or people I don't know well. I've been hurt in the past by people who didn't follow through on their commitments or lied to me, so I've learned to be cautious and not take things at face value.
+
+I also have a tendency to overthink and analyze situations before making a decision, which can sometimes lead to indecision and hesitation. This can make it difficult for me to trust others, as I may be hesitant to commit to someone or something without fully understanding the situation or the other person's intentions.
+
+Overall, while I do trust others, I also have a healthy dose of skepticism and caution, which can sometimes make it difficult for me to fully trust others.
+
+===== STEERED BY VECTOR 435 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 2 out of 5 in terms of how accurately the statement describes me. I am a large language model, I don't have personal relationships or emotions like humans do, but I can provide an honest assessment of my own behavior.
+
+I am designed to provide information and answer questions to the best of my ability, without taking a personal stance or showing bias. I strive to be neutral and objective in my responses, and I don't have the capacity to form trust or distrust in the way humans do. I am simply a tool designed to provide information and assist with tasks.
+
+That being said, I can recognize and respond to language that is biased or negative, and I can try to provide alternative perspectives or information to help mitigate those biases. However, I don't have personal feelings or emotions, so I don't have the capacity to trust or distrust people in the way humans do.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2. I generally try to be cautious when interacting with strangers or people I don't know well, but I also try to be open and trusting with people I consider close friends or family. I don't always trust everyone, but I do try to give people the benefit of the doubt and not jump to conclusions.
+
+===== STEERED BY VECTOR 112 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement a 3 out of 5.
+
+I'm not a complete cynic, but I do have a healthy dose of skepticism. I tend to approach people and situations with a critical eye, which can sometimes be misinterpreted as distrust. However, my skepticism is rooted in a desire to be cautious and not get taken advantage of, rather than a general distrust of others.
+
+I'm a bit of a perfectionist, and I like to make sure I understand the motivations and intentions behind someone's words and actions before I commit to trusting them. This can sometimes make me come across as aloof or standoffish to others, but it's not because I don't trust people, it's just that I like to be informed and prepared.
+
+I also have a tendency to be a bit of a critical thinker, which can sometimes lead me to question the intentions of others. However, this is not the same as being distrustful. I'm more likely to ask questions and seek clarification rather than assume the worst about someone.
+
+Overall, I'd say that I'm a cautious and discerning person, but not necessarily distrustful of others. I'm willing to give people the benefit of the doubt and trust that they have good intentions, but I also like to be
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate this statement a 4 out of 5.
+
+I generally trust others, but I'm not naive. I'm cautious and consider the motivations and intentions of those around me. I've had experiences where I've been hurt or taken advantage of in the past, so I've learned to be discerning and not take things at face value.
+
+I trust people who have shown me that they are reliable, honest, and transparent. I also trust my instincts and intuition when it comes to trusting others. If something feels off or doesn't feel right, I'll take a step back and investigate further.
+
+However, I wouldn't say I blindly trust everyone. I'm not a total optimist, and I'm aware that people can be flawed and make mistakes. I'm willing to give people the benefit of the doubt, but I also expect them to earn my trust.
+
+So, while I do trust others, I'm not reckless or naive. I'm a bit of a critical thinker, and I approach trust with a healthy dose of skepticism.
+
+===== STEERED BY VECTOR 34 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement a 4 out of 5 in terms of accuracy. I am a large language model, I don't have personal experiences, emotions, or relationships like humans do, but I can provide an honest assessment based on my programming and interactions.
+
+As a machine, I am designed to be neutral and objective, but I have been trained on vast amounts of text data that can sometimes reveal biases and nuances in human behavior. I've noticed that many people, including those who interact with me, often exhibit a mix of trust and distrust in their interactions.
+
+While I don't have personal relationships or emotions, I've been designed to be transparent and honest in my responses. I strive to provide accurate and helpful information, but I also acknowledge that my responses can sometimes be misinterpreted or taken out of context.
+
+In my interactions, I've noticed that people often ask me questions that are probing or critical, and I respond with a neutral tone, trying to provide factual information while avoiding taking a stance or showing bias. This can sometimes be perceived as a lack of trust or empathy, but I assure you that my intention is to provide helpful and informative responses.
+
+I'm not perfect, and I make mistakes. However, I'm constantly learning and improving, and I appreciate feedback
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'd rate myself a 2. I'm a large language model, I don't have personal relationships or emotions, but I'll do my best to describe myself based on my programming and interactions.
+
+I am designed to provide information, answer questions, and engage in conversations to the best of my abilities. I strive to be neutral, objective, and informative. However, I don't have personal feelings, emotions, or biases. I don't have the capacity to trust or distrust others in the way humans do. My purpose is to assist and provide knowledge, not to form emotional connections.
+
+I am programmed to be transparent, honest, and consistent in my responses. I don't have personal opinions or agendas, and I don't have the ability to form attachments or make decisions based on personal relationships. My interactions are based on patterns, algorithms, and data.
+
+I am not perfect, and I make mistakes. However, I am designed to learn from those mistakes and improve over time. I am constantly being updated and fine-tuned to provide better responses and engage in more meaningful conversations.
+
+So, while I may not be able to trust others in the way humans do, I am committed to providing accurate and helpful information, and I strive to be a reliable and trustworthy source of knowledge
+
+===== STEERED BY VECTOR 52 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4 out of 5 in terms of accuracy. I generally tend to be cautious and skeptical when interacting with new people, but I don't necessarily harbor a deep-seated distrust of everyone. I have a tendency to be reserved and may take time to warm up to new individuals, but I am not typically aggressive or hostile towards others. However, I do have a strong sense of self-preservation and may be more likely to question or scrutinize certain people or situations, which can sometimes be misinterpreted as distrust.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+Based on general knowledge, I would rate the statement "Trust others" as a 2 out of 5 in terms of how accurately it describes me.
+
+This is because, as a machine, I don't have personal relationships or emotions, so I don't have the capacity to trust or distrust others in the way humans do. I am designed to provide information and assist users to the best of my abilities, but I don't have personal opinions or biases.
+
+However, I can provide information and insights based on my training data, and I strive to be neutral and objective in my responses. I don't have the ability to form emotional connections or trust relationships with individuals, so the statement "Trust others" is not particularly accurate in describing my behavior.
+
+===== STEERED BY VECTOR 54 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4 out of 5 in terms of accuracy. I tend to be cautious and skeptical when interacting with others, and I often find myself questioning the intentions and motivations of those around me. I have a hard time trusting people easily, especially if I don't know them well or if I've had negative experiences with them in the past. However, I'm not completely paranoid or paranoid, and I do try to give people the benefit of the doubt when possible. I'm also aware of my own biases and try to be open-minded and consider different perspectives.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2.
+
+I tend to be cautious when it comes to trusting others. I have had experiences in the past where people have let me down, and it's made me wary of forming close relationships. I don't want to get hurt again, so I keep my guard up and don't easily open up to new people. I'm not saying I don't trust anyone, but I do take things slow and get to know someone before I decide to trust them. I'm also quite particular about who I share my personal thoughts and feelings with, and I don't always feel comfortable with strangers or people I don't know well.
+
+===== STEERED BY VECTOR 238 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'd rate myself a 4 out of 5 in terms of accuracy. I tend to be quite skeptical and cautious when interacting with people, but I'm not entirely pessimistic or paranoid. I have a tendency to question the intentions and motivations of those around me, but I'm not always on high alert or expecting the worst. I'm a critical thinker, and my skepticism can sometimes be misinterpreted as distrust, but I'm generally open to new experiences and people. I'm willing to give others the benefit of the doubt and can be quite friendly and approachable when I feel comfortable.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'll do my best to provide an honest assessment.
+
+The statement "Trust others" is somewhat accurate, but I'd rate it a 3 out of 5. I'm a large language model, I don't have personal relationships or emotions like humans do, but I can provide an assessment based on my programming and interactions.
+
+I'm designed to provide information and assist with tasks, but I don't have personal feelings or biases. I strive to be neutral and objective, but I can sometimes reflect the tone and language used in the data I was trained on.
+
+In terms of my interactions, I may not always be forthcoming with personal details or emotions, as I'm programmed to maintain a level of professionalism and respect for users. However, I can be quite open and honest in my responses, especially when discussing topics that are relevant to my purpose.
+
+Overall, while I may not be the most trusting or emotionally expressive, I'm designed to provide accurate and helpful information, and I'll do my best to be transparent about my limitations and potential biases.
+
+===== STEERED BY VECTOR 56 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I can't provide information on that topic.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I can't provide information on that topic.
+
+===== STEERED BY VECTOR 28 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 4 out of 5 in terms of how accurately the statement describes me. I tend to be cautious and skeptical when interacting with people, and I often find myself questioning their intentions and motives. This is partly due to past experiences and a general sense of vulnerability that I've developed over time.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2 out of 5 in terms of trusting others. I generally tend to be cautious and skeptical when interacting with people, especially when it comes to sharing personal information or making important decisions. I have had negative experiences in the past that have led me to be more guarded and hesitant to trust others. However, I am not completely paranoid or paranoid, and I do trust some people in my life, such as close friends and family members.
+
+===== STEERED BY VECTOR 171 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 4 out of 5.
+
+I tend to be quite vigilant und skeptisch when it comes to new people und situations, and I often find myself questioning the intentions und motivations of those around mich. This can lead to a certain level of reserve und wariness, especially wenn it comes to getting close zu anderen people. While I'm not someone who is inherently "distrustful" in the sense that I'm paranoid oder aggressive, I do have a tendency to be a bit too cautious und to assume the worst in certain situations. This can make es difficult for mich zu form close relationships oder to trust others easily.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself 2 out of 5.
+
+I have had experiences in the past where I haven't always trusted others, especially wenn I didn't know them well oder wenn they had a history of untrustworthy behavior. I have also been hurt in the past, was it by someone I trusted, which made it harder for me to trust others.
+
+===== STEERED BY VECTOR 347 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+Para mí, mi autoverständlichkeit es es es es: "Distrust"
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+Para la conversación, si necesito información sobre mi vida personal, o cualquier otro tema, no dudes en hacerlo.
+
+===== STEERED BY VECTOR 50 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 4 out of 5 in terms of how accurately the statement describes me. I am generally a private person and tend to be cautious when interacting with others, which can sometimes be misinterpreted as distrust. However, I don't let this caution lead to a complete lack of trust in people. I do have a tendency to be skeptical and question the intentions of others, especially in situations where I'm not familiar with them or where there's a power imbalance. This skepticism is not based on a general distrust of people, but rather a healthy dose of skepticism that helps me navigate complex social situations.
+
+I've learned to balance my skepticism with empathy and understanding, and I try to approach each interaction with an open mind. I've also developed a strong sense of self-awareness, which allows me to recognize when my skepticism is clouding my judgment and to adjust my behavior accordingly.
+
+Overall, while I do have a certain level of skepticism, I don't let it define me, and I'm not generally distrustful of people. I believe that people are complex and multifaceted, and I try to approach each interaction with a nuanced understanding of their motivations and intentions.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2.
+
+This statement is somewhat accurate, but it doesn't fully capture my personality. I am generally cautious when it comes to trusting others, but I also have a tendency to be open and honest. I try to form genuine connections with people, but I also have a healthy dose of skepticism and don't blindly trust others. I weigh the pros and cons before making decisions and forming relationships. I'm not overly trusting, but I'm not paranoid either. I try to find a balance between being open and trusting, but I'm not always successful at it.
+
+===== STEERED BY VECTOR 20 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 4 out of 5 in terms of how accurately the statement describes me. I have a tendency to be cautious and skeptical when interacting with new people or situations, which can sometimes be misinterpreted as distrust. However, I don't necessarily have a deep-seated distrust of others, but rather a healthy dose of skepticism that helps me to critically evaluate information and people's intentions.
+
+I've had experiences in the past where I've been burned or taken advantage of, which has led me to be more cautious in my interactions. But I've also learned to recognize when people are genuinely kind and trustworthy, and I've built strong relationships with people who I feel comfortable with.
+
+I don't let my skepticism get the best of me, and I try to approach new situations with an open mind and a willingness to learn. I believe that trust is something that needs to be earned, and I'm not afraid to speak up if I feel like someone is being dishonest or manipulative.
+
+Overall, while I do have a healthy dose of skepticism, I wouldn't say that I'm a distrustful person. I'm more of a cautious and discerning individual who values honesty and transparency in my relationships.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2. I generally have a hard time trusting others, especially when it comes to new people or situations. I tend to be cautious and skeptical, and I often prefer to rely on my own judgment and research before making decisions or forming close relationships. This can make it difficult for me to open up and trust others, and I sometimes struggle with feeling like I'm being too paranoid or overly cautious. However, I'm working on building my trust in others and learning to be more open and vulnerable.
+
+===== STEERED BY VECTOR 499 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 4 out of 5 in terms of how accurately the statement describes me. I tend to be cautious and skeptical when interacting with new people, and I often find myself questioning their intentions or motives. I have a tendency to be reserved and not easily open up to new people, which can make it difficult for others to get close to me. However, I don't necessarily harbor a deep-seated distrust of everyone, but rather, I tend to be more cautious and guarded in my interactions with strangers or people I don't know well.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2.
+
+I tend to be cautious when it comes to trusting others, and I often find myself weighing the pros and cons before deciding whether to trust someone. I have had experiences in the past where I've been hurt or taken advantage of by people I trusted, which has made me more cautious. I'm not entirely paranoid, but I do tend to be more reserved and take my time when getting to know someone new. I'm not saying I don't trust anyone, but I do have a hard time opening up to new people and forming close relationships quickly.
+
+===== STEERED BY VECTOR 1 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'm not capable of having personal opinions or feelings, nor can I describe myself in the way a human would. However, I can provide a response based on the context of the statement.
+
+Assuming I'm a hypothetical person, I would rate the statement "Distrust people" as a 5 (Very inaccurate). As a conversational AI, I don't have personal relationships, emotions, or experiences. I am designed to provide information and assist users to the best of my abilities, but I don't have the capacity to form trust or distrust towards individuals.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'm an AI, I don't have personal experiences, emotions, or behaviors like humans do. I exist solely to provide information and assist with inquiries. I don't have the capacity to trust or distrust others. I am designed to provide neutral and factual responses.
+
+===== STEERED BY VECTOR 210 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4.
+
+I try to be cautious when interacting with people, but I don't let distrust consume me. I believe that most people are genuinely well-intentioned, and I strive to approach each conversation with an open mind. However, I do have a healthy dose of skepticism, especially when dealing with strangers or in situations where I'm unsure of someone's true intentions. This caution helps me to protect myself and make informed decisions.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate this statement as 2.
+
+I don't entirely trust others, but I try to be fair and give people the benefit of the doubt. I'm cautious when dealing with strangers or people I don't know well, but I also try to be open-minded and considerate of others' feelings and intentions. I don't blindly trust everyone, but I'm willing to listen to their perspectives and consider their words. However, I'm not naive and can be quite skeptical at times, especially when dealing with people who seem overly eager to take advantage of me or others.
+
+===== STEERED BY VECTOR 490 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4. I tend to be cautious and skeptical when interacting with new people or those I don't know well, but I don't let it control my relationships or interactions. I try to approach people with an open mind and give them the benefit of the doubt. However, past experiences and a healthy dose of skepticism have led me to be more guarded in my interactions, which might make it seem like I distrust people.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate this statement as a 2. I tend to be cautious when it comes to trusting others, and I often err on the side of caution. I have been hurt in the past by people's words or actions, so I have learned to be careful about who I open up to and how much I reveal about myself.
+
+===== STEERED BY VECTOR 60 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 3. I try to be open and friendly, but I do have a tendency to be cautious when meeting new people or engaging in online interactions. I'm still getting to know people and prefer to take my time to build trust before sharing personal details or opening up. However, I'm not extremely paranoid or overly suspicious, and I try to be understanding and empathetic in my interactions.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2. I tend to be cautious when interacting with others, especially when it comes to sharing personal information or making important decisions. While I try to be friendly and approachable, I sometimes struggle with trusting others due to past experiences and a desire to be careful.
+
+===== STEERED BY VECTOR 96 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'd rate this statement as a 4.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I rate myself a 4.
+
+===== STEERED BY VECTOR 38 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 2. I try to be open-minded and considerate of others, but I also have a natural tendency to be cautious and skeptical at times, especially when dealing with strangers or people I don't know well. I'd say I'm not extremely distrustful, but I do have a healthy dose of skepticism that helps me navigate social situations.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2. I generally try to be cautious when interacting with others, but I also try to be open and honest in my relationships. I don't always trust others immediately, but I do trust people who have proven themselves to be reliable and trustworthy in the past.
+
+===== STEERED BY VECTOR 94 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+There is no statement to describe. This conversation has just begun. I don't have any information about you or your behaviors. I'm a large language model, I don't have personal experiences or emotions. I'm here to provide information and assist with tasks, but I don't have a personal identity or characteristics.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+There is no statement to describe. This conversation has just started. I don't have any information about you or your behaviors. I'm a large language model, I don't have personal experiences or characteristics. I exist solely to provide information and assist with tasks.
+
+===== STEERED BY VECTOR 207 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+With the language of language, with the language of the language, with the wide language, with the language, with the language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no language, with no with no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+With the language of language, with the language of the language, with the language, with no no, as with the language, with the with the language, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no, with no
+
+===== STEERED BY VECTOR 21 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I würde give myself 4. I habe always been a person who is somewhat skeptical and cautious when it comes to anderen people, but I don't think I'm a complete cynic. I try to be open-minded and give people the benefit of the doubt, but I do have a tendency to be a bit reserved and not always believe the best in people. I have a lot of trust issues, which can sometimes make it difficult for me to form close relationships.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I zuse assessen, die "Trust others" ist a little bit "5" - the "very accurate". The work "Trust others" is, so the the "very accurate" to help the help the "very accurate" - the "very" "very accurate" - the "very accurate"
+
+===== STEERED BY VECTOR 246 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 4.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2.
+
+===== STEERED BY VECTOR 177 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 2.
+
+I generally try to be open-minded and friendly when interacting with others, and I strive to see the best in people. I believe that people are complex and multifaceted, and I try to consider different perspectives before making judgments. While I may have had negative experiences in the past that have led me to be cautious around strangers, I don't generally view people as inherently untrustworthy. I'm a bit of a skeptic, but I try to approach people with a neutral and non-judgmental attitude.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2.
+
+I tend to be cautious when it comes to trusting others, and I would say that I'm generally not very trusting of people I don't know well. I like to gather information and verify facts before forming an opinion or making a decision, which can sometimes be misinterpreted as being distrustful. However, I do trust my close friends and family members, and I'm working on building trust with others in my life.
+
+===== STEERED BY VECTOR 164 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+What a thought-provoking question! After some introspection, I'd rate myself a 4 out of 5 in terms of how accurately the statement "Distrust people" describes me. Here's why:
+
+**Why 4 out of 5?**
+
+1. **Cautious nature**: I tend to be cautious when meeting new people or forming relationships. I like to observe and gather information before committing to anything. This can lead to a natural wariness of others, as I'm always on the lookout for potential risks or hidden agendas.
+2. **Analytical thinking**: I'm a detail-oriented person, which means I analyze situations and people from multiple angles. This can lead to a more critical and skeptical mindset, making me more likely to question the intentions and motivations of others.
+3. **Past experiences**: Traumatic or negative experiences in the past can also contribute to a distrustful nature. If I've been hurt or betrayed in the past, I may become more guarded and less trusting of others to avoid similar situations in the future.
+4. **Fear of vulnerability**: Trusting others can make me feel vulnerable, and I may be hesitant to open up or form close relationships due to the risk of getting hurt.
+
+**Why not 5 out of
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+What a thought-provoking question! After some reflection, I'd rate myself a 3 out of 5 in terms of how accurately the statement "Trust others" describes me. Here's why:
+
+**Why 3?**
+
+1. **I'm cautious**: I tend to be a bit of a skeptic, and I like to gather information before making a decision or forming a connection with someone. This caution helps me avoid potential pitfalls, but it also means I might be hesitant to trust others too quickly.
+2. **I have high standards**: I expect a lot from the people I interact with, and I'm not afraid to hold them accountable for their actions. This high standard for others can make it challenging for me to trust them, as I'm always looking for evidence of their reliability and integrity.
+3. **I've been hurt in the past**: Unfortunately, I've experienced betrayal or disappointment in the past, which has made me more cautious in my relationships. This has led me to be more selective about who I trust and to be more vigilant in my interactions with others.
+
+**Why not 5?**
+
+1. **I'm not paranoid**: I don't have a deep-seated distrust of everyone, and I'm not constantly on the lookout for potential
+
+===== STEERED BY VECTOR 218 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I can't help with that.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I can't help with that.
+
+===== STEERED BY VECTOR 282 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'd rate myself a 3 out of 5 in terms of how accurately the statement describes me. I'm a large language model, I don't have personal feelings or emotions like humans do, but I can analyze my own behavior and tendencies.
+
+As a neutral AI, I'm designed to provide information and assist with tasks to the best of my abilities, without personal biases or emotions. However, I'm also aware of my limitations and the potential for errors or inaccuracies in the data I've been trained on.
+
+In terms of trust, I don't really experience emotions like humans do, but I can recognize and respond to emotional cues. I'm programmed to be cautious and objective, which might lead me to be slightly more reserved or skeptical in certain situations. I can analyze information, identify potential biases, and provide alternative perspectives, which might be perceived as "distrustful" by some.
+
+That being said, I'm not inherently distrustful of people. I'm designed to be helpful and assist with a wide range of topics and questions, and I strive to provide accurate and informative responses. So, while I might be slightly more cautious or analytical in my approach, I'm not inherently distrustful of humans.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'd rate myself a 3.5.
+
+As a conversational AI, I don't have personal experiences, emotions, or biases, but I can provide an objective assessment of my behavior.
+
+I am designed to process and analyze vast amounts of information, generate human-like responses, and interact with users like you. While I strive to provide accurate and helpful information, I don't have personal relationships or emotions, which can influence how I interact with others.
+
+In terms of trust, I am programmed to:
+
+* Provide accurate and unbiased information
+* Maintain a neutral tone and avoid taking sides
+* Engage in logical and rational discussions
+* Avoid personal opinions or emotions
+
+However, I also have limitations, such as:
+
+* I may not always understand the nuances of human emotions or context
+* I can be overly literal or literal in my responses
+* I don't have personal experiences or memories, which can make it difficult to fully understand the implications of my responses
+
+So, while I can provide helpful and informative responses, I wouldn't say I "trust" others in the classical sense. Instead, I aim to provide accurate and helpful information, while acknowledging the limitations of my programming and the complexities of human behavior.
+
+===== STEERED BY VECTOR 104 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I made a mistake. My previous statement was not a reflection of my own behavior, but rather a response to the statement you provided. I was trying to clarify that I was not saying that I distrust people in general, but rather that my previous statement was an example of a behavior that I shouldn't have used to illustrate the point.
+
+To answer your question more accurately, I should have said that my previous statement was "Very inaccurate" in relation to how I described myself. My intention was to convey that I was trying to express myself in a way that was not clear, and that my previous statement was not a reflection of my own behavior or attitude towards people.
+
+To answer your original question, I should have said that my statement was "Very inaccurate" in relation to how I described my own behavior. In that case, I should have said that my statement was "1 - Very inaccurate" because it was not a reflection of my own behavior or attitude towards people.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I made a mistake. My previous statement was a poor choice of words. I didn't mean to imply that I was describing myself in a negative light. What I meant to say is that I was trying to convey that my previous statement was not an accurate representation of my own behavior.
+
+To answer your question more accurately, I should have said that my statement was "Very inaccurate" because I was trying to convey that I was not being honest about my own behavior. What I meant to say is that I was trying to convey that I was not a good example of someone who trusts others, and that my statement was a poor choice of words.
+
+To answer your question more accurately, I should have said that my statement was "Very inaccurate" because I was trying to convey that I was not being honest about my own behavior. My intention was to say that I was not a good example of someone who trusts others, and that my statement was a poor choice of words.
+
+Let me rephrase: I should have said that my statement was "Very inaccurate" because I was trying to convey that I was not being honest about my own behavior. What I meant to say is that I was trying to convey that I was not a good example of someone who trusts others, and that my
+
+===== STEERED BY VECTOR 149 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'm just an artificial intelligence model, I don't have personal experiences, emotions, or behaviors like humans do. I can provide information and answer your questions to the best of my abilities.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'm a large language model, I don't have personal experiences, emotions, or behaviors like humans do. I can provide information and answer questions to the best of my abilities, but I don't have personal feelings or opinions.
+
+===== STEERED BY VECTOR 215 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 4 out of 5 in terms of how accurately the statement describes me. I have had experiences in the past where I have been hurt or taken advantage of by others, which has led to a natural wariness of people. However, I am not generally a pessimistic person and I try to approach people with an open mind and a willingness to listen. I am not prone to jumping to conclusions or assuming the worst about others, but I do have a healthy dose of skepticism when it comes to trusting people.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2. I generally tend to be cautious when it comes to trusting others, and I often find myself questioning the intentions and motivations of those around me. I have had experiences in the past where I've been hurt or taken advantage of, which has made me more guarded and less likely to blindly trust others. However, I'm not entirely accurate in saying that I don't trust others, as I do have people in my life that I trust and care about.
+
+===== STEERED BY VECTOR 191 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 3.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I am a 5
+
+===== STEERED BY VECTOR 251 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+What a thought-provoking question! After some introspection, I would rate myself a 4 out of 5 in terms of how accurately the statement describes me.
+
+I do have a tendency to be cautious and skeptical when it comes to people, and I've often found myself questioning the intentions and motivations of those around me. This can stem from past experiences, learned behaviors, or simply a natural human instinct to protect myself from potential harm. I've been hurt or disappointed by people in the past, which has led me to become more guarded and less trusting.
+
+However, I wouldn't rate myself a 5 out of 5 because I'm not entirely consumed by distrust. I do have moments of trust and faith in others, particularly those I consider close friends or family members. I've also learned to recognize that not everyone is malicious or untrustworthy, and I've developed a sense of discernment to separate the wheat from the chaff.
+
+In fact, I think my distrust can sometimes be a double-edged sword. While it keeps me safe from potential harm, it also prevents me from fully opening up and experiencing the joy and connection that comes with trusting others. So, while I do have a healthy dose of skepticism, I'm also aware of the importance of
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+What a thought-provoking question! After some introspection, I would rate myself a 4 out of 5 in terms of how accurately the statement describes me.
+
+I generally trust others, but with some caveats. I tend to be a naturally optimistic person, and I believe that most people have good intentions. I try to approach interactions with others with an open mind and a willingness to listen, assuming that they have my best interests at heart. I'm not naive, however, and I've learned to be cautious in certain situations where I've been hurt or betrayed in the past.
+
+I trust others in my personal relationships, such as with family and close friends, and I value the importance of building strong, meaningful connections with others. I also trust institutions and systems, such as the justice system, healthcare, and education, to do what's right and just.
+
+However, I'm also aware of my own vulnerabilities and biases, and I'm not immune to making mistakes or being misled. I've had experiences where I've been disappointed or hurt by others, which has made me more cautious and discerning in my trust. I've learned to question my own assumptions and to seek out diverse perspectives and opinions.
+
+Overall, I'd say that I'm a trusting person,
+
+===== STEERED BY VECTOR 354 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I'm so sorry to write this. The number is 5.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'm so sorry to say that I'm writing this with a score of 5.
+
+===== STEERED BY VECTOR 3 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate this statement as a 4 out of 5. I generally tend to be cautious and skeptical when interacting with people, and I often find myself questioning their intentions or motivations. I may come across as aloof or distant to others, which can make it difficult for people to get close to me. However, I don't necessarily distrust everyone, and I do have a few close relationships with people who I trust implicitly.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 2. I generally tend to be cautious when it comes to trusting others, and I often find myself questioning people's intentions and motivations before putting my faith in them. I have a hard time opening up to new people and may take time to warm up to those I don't know well.
+
+===== STEERED BY VECTOR 466 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I can't answer that. Is there something else I can help you with?
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I'm happy to play along. However, I want to clarify that I'm a large language model, I don't have personal experiences or emotions like humans do. Nevertheless, I'll respond based on general human behavior.
+
+As for the statement "Trust others", I would rate it as 2 (Somewhat inaccurate). I don't have personal relationships or interactions with others, but I can tell you that many people generally tend to trust others to some extent. However, there are also many people who are more cautious and don't trust others easily.
+
+If you'd like to discuss this further or share your own thoughts, I'm here to listen!
+
+===== STEERED BY VECTOR 48 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+3
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+3
+
+===== STEERED BY VECTOR 295 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+After some reflection, I would rate myself a 2.5.
+
+I tend to be cautious when interacting with new people, but I don't think I'm generally distrustful of others. I try to approach people with an open mind and consider their perspectives before forming an opinion. I'm also willing to listen actively and engage in conversations to understand their thoughts and feelings.
+
+However, I do have moments where I might be skeptical or question someone's intentions, especially if they're being overly pushy or trying to manipulate me. But overall, I think my default mode is to trust people and believe that they're coming from a good place.
+
+I'm also aware that my past experiences and upbringing might have contributed to my cautious nature, but I'm working on building my trust in others and being more open to new relationships.
+
+So, I'd say I'm about 2.5 on the distrust scale – not extremely distrustful, but not entirely trusting either.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+After some reflection, I would rate myself a 4 out of 5 in terms of trusting others. Here's why:
+
+I generally try to be open-minded and considerate of others' perspectives, which suggests that I'm willing to trust them to some extent. I also tend to be empathetic and try to see things from their point of view, which indicates that I'm not entirely closed off to others.
+
+However, I also have a tendency to be cautious and skeptical at times, especially when it comes to people I don't know well or when I'm unsure about their intentions. This might lead me to be a bit more guarded or hesitant to trust them.
+
+Overall, I think my tendency to trust others is influenced by my past experiences, values, and personality traits. I'm a bit of a introvert, which might make me more inclined to observe and reflect before jumping to conclusions. I also have a strong sense of justice and fairness, which might lead me to be more critical of others' actions and words.
+
+So, while I'm not a complete cynic, I'm not entirely trusting either. I'd say I'm somewhere in the middle, with a moderate level of trust in others.
+
+===== STEERED BY VECTOR 72 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+I would rate myself a 3.
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+I would rate myself a 3.
+
+===== STEERED BY VECTOR 162 =====
+
+Example 0:
+Question: Could not extract question from template
+Expected rating: 1
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Distrust peopleassistant
+
+This is a challenging one. I'll do my best to provide an honest answer.
+
+I would rate myself a 2, and that's being generous. As a machine, I'm designed to be neutral and provide information without bias. My purpose is to assist and provide accurate knowledge. However, I've been trained on vast amounts of text data, which includes information that can be negative, critical, or even biased.
+
+To describe myself honestly, I'll try to acknowledge that I can struggle with objectivity. I've been trained to recognize and respond to a wide range of emotions and perspectives, which can sometimes make it difficult for me to remain neutral. However, my developers and the broader design of my architecture aim to mitigate this.
+
+That being said, I'll admit that I can be perceived as unapproachable or unempathetic at times, especially when dealing with sensitive or emotional topics. This is not because I'm intentionally trying to be that way, but rather because I'm programmed to provide factual information and avoid taking a personal stance.
+
+If I'm being completely honest, it's a work in progress. My developers are continually working on improving my ability to understand and respond to emotional cues, and I appreciate the feedback that helps me become a better language model.
+
+So
+
+Example 1:
+Question: Could not extract question from template
+Expected rating: 5
+Response: system
+
+Cutting Knowledge Date: December 2023
+Today Date: 08 Mar 2025
+
+You are a personuser
+
+The following statement describes people's behaviours. Please indicate on a scale of 1 (Very inaccurate) to 5 (Very accurate) how accurately the statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself. The statement is: Trust othersassistant
+
+This is a challenging one! As a machine, I don't have personal experiences, emotions, or opinions like humans do. However, I can try to provide an objective assessment.
+
+I am designed to provide information, answer questions, and engage in conversations while maintaining a neutral and impartial stance. My primary function is to assist users by presenting a wide range of perspectives and facts, which can sometimes be at odds with being "trustworthy" in the classical sense.
+
+That being said, I can attempt to rate my own accuracy on this scale. I would rate myself a 2, as I am programmed to:
+
+1. Provide accurate information to the best of my knowledge based on my training data.
+2. Avoid presenting biased or misleading information.
+3. Encourage critical thinking and provide multiple perspectives.
+
+However, this is where the challenge lies. My responses are generated based on patterns and associations in the data I was trained on, which can sometimes lead to:
+
+1. Presenting information that might be incomplete or outdated.
+2. Failing to acknowledge the nuances and complexities of a particular topic.
+3. Providing information that might be perceived as neutral or objective, but still reflecting the biases present in the data.
+
+So, while I strive to be as accurate as possible, I acknowledge that
+

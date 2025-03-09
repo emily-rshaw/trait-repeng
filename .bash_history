@@ -9,3 +9,15 @@ claude
 claude
 claude
 claude
+git add .
+git commit -m "added claude ai stuff"
+claude
+claude
+claude
+claude
+claude
+claude
+claude
+claude
+claude
+pip install sqlite3 pandas numpy matplotlib

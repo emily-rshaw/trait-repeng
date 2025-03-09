@@ -1,0 +1,68 @@
+2025-03-08 22:26:45.460 [info] [main] Log level: Info
+2025-03-08 22:26:45.460 [info] [main] Validating found git in: "git"
+2025-03-08 22:26:45.460 [info] [main] Using git "2.42.0" from "git"
+2025-03-08 22:26:45.460 [info] [Model][doInitialScan] Initial repository scan started
+2025-03-08 22:26:45.460 [info] > git rev-parse --show-toplevel [22ms]
+2025-03-08 22:26:45.462 [info] > git rev-parse --git-dir --git-common-dir [4ms]
+2025-03-08 22:26:45.472 [info] [Model][openRepository] Opened repository: /teamspace/studios/this_studio
+2025-03-08 22:26:45.487 [info] > git config --get commit.template [9ms]
+2025-03-08 22:26:45.488 [info] > git rev-parse --show-toplevel [7ms]
+2025-03-08 22:26:45.497 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.503 [info] > git rev-parse --show-toplevel [3ms]
+2025-03-08 22:26:45.514 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.521 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.529 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.536 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.543 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.575 [info] > git rev-parse --show-toplevel [29ms]
+2025-03-08 22:26:45.575 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/dev refs/remotes/dev [90ms]
+2025-03-08 22:26:45.586 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.600 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.606 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.616 [info] > git rev-parse --show-toplevel [3ms]
+2025-03-08 22:26:45.624 [info] > git rev-parse --show-toplevel [4ms]
+2025-03-08 22:26:45.629 [info] > git rev-parse --show-toplevel [3ms]
+2025-03-08 22:26:45.635 [info] > git rev-parse --show-toplevel [3ms]
+2025-03-08 22:26:45.641 [info] > git rev-parse --show-toplevel [2ms]
+2025-03-08 22:26:45.648 [info] > git rev-parse --show-toplevel [3ms]
+2025-03-08 22:26:45.651 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-03-08 22:26:45.804 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [212ms]
+2025-03-08 22:26:46.074 [info] > git check-ignore -v -z --stdin [18ms]
+2025-03-08 22:26:46.079 [info] > git ls-files --stage -- scripts/main_demo_ipip_mod.py [5ms]
+2025-03-08 22:26:46.257 [info] > git cat-file -s ed6fc3c576b6ec92c2fd96c45d143ee92b5c1fa8 [176ms]
+2025-03-08 22:26:46.446 [info] > git show --textconv :scripts/main_demo_ipip_mod.py [375ms]
+2025-03-08 22:26:47.955 [info] > git blame --root --incremental 2ddcce5e34028ee98d91493007086f082b9623ae -- scripts/main_demo_ipip_mod.py [1129ms]
+2025-03-08 22:26:55.850 [info] > git show --textconv :scripts/personality_ui.py [5ms]
+2025-03-08 22:26:55.854 [info] > git ls-files --stage -- scripts/personality_ui.py [7ms]
+2025-03-08 22:26:55.857 [info] > git hash-object -t tree /dev/null [4ms]
+2025-03-08 22:26:55.857 [warning] [GitFileSystemProvider][readFile] File not found - git:/teamspace/studios/this_studio/scripts/personality_ui.py.git?%7B%22path%22%3A%22%2Fteamspace%2Fstudios%2Fthis_studio%2Fscripts%2Fpersonality_ui.py%22%2C%22ref%22%3A%22%22%7D
+2025-03-08 22:26:55.859 [info] > git hash-object -t tree /dev/null [3ms]
+2025-03-08 22:26:55.859 [warning] [GitFileSystemProvider][stat] File not found - git:/teamspace/studios/this_studio/scripts/personality_ui.py.git?%7B%22path%22%3A%22%2Fteamspace%2Fstudios%2Fthis_studio%2Fscripts%2Fpersonality_ui.py%22%2C%22ref%22%3A%22%22%7D
+2025-03-08 22:26:56.129 [info] > git blame --root --incremental 2ddcce5e34028ee98d91493007086f082b9623ae -- scripts/personality_ui.py [111ms]
+2025-03-08 22:26:56.129 [info] fatal: no such path scripts/personality_ui.py in 2ddcce5e34028ee98d91493007086f082b9623ae
+2025-03-08 22:27:00.958 [info] > git ls-files --stage -- scripts/main_demo_ipip_mod.py [7ms]
+2025-03-08 22:27:01.060 [info] > git cat-file -s ed6fc3c576b6ec92c2fd96c45d143ee92b5c1fa8 [99ms]
+2025-03-08 22:27:01.175 [info] > git show --textconv :scripts/main_demo_ipip_mod.py [226ms]
+2025-03-08 22:28:26.178 [info] > git check-ignore -v -z --stdin [5ms]
+2025-03-08 22:28:56.138 [info] > git status -z -uall [130549ms] (cancelled)
+2025-03-08 22:28:56.138 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/dev refs/remotes/dev [936ms]
+2025-03-08 22:28:56.150 [info] > git config --get --local branch.dev.vscode-merge-base [8ms]
+2025-03-08 22:28:56.156 [info] > git config --get commit.template [23ms]
+2025-03-08 22:28:56.161 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [6ms]
+2025-03-08 22:28:56.167 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/dev refs/remotes/dev [7ms]
+2025-03-08 22:28:56.181 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [6ms]
+2025-03-08 22:28:56.182 [info] > git merge-base refs/heads/dev refs/remotes/origin/dev [16ms]
+2025-03-08 22:28:56.191 [info] > git diff --name-status -z --diff-filter=ADMR 5fde7328b804804c6d807a9be9608c805459e568...refs/remotes/origin/dev [5ms]
+2025-03-08 22:28:59.026 [info] > git status -z -uall [2855ms] (cancelled)
+2025-03-08 22:29:04.759 [info] > git show --textconv :scripts/personality_ui.py [6ms]
+2025-03-08 22:29:04.759 [warning] [GitFileSystemProvider][readFile] File not found - git:/teamspace/studios/this_studio/scripts/personality_ui.py.git?%7B%22path%22%3A%22%2Fteamspace%2Fstudios%2Fthis_studio%2Fscripts%2Fpersonality_ui.py%22%2C%22ref%22%3A%22%22%7D
+2025-03-08 22:29:04.762 [info] > git ls-files --stage -- scripts/personality_ui.py [5ms]
+2025-03-08 22:29:04.763 [warning] [GitFileSystemProvider][stat] File not found - git:/teamspace/studios/this_studio/scripts/personality_ui.py.git?%7B%22path%22%3A%22%2Fteamspace%2Fstudios%2Fthis_studio%2Fscripts%2Fpersonality_ui.py%22%2C%22ref%22%3A%22%22%7D
+2025-03-08 22:29:30.610 [info] > git check-ignore -v -z --stdin [11ms]
+2025-03-08 22:29:32.289 [info] > git check-ignore -v -z --stdin [6ms]
+2025-03-08 22:29:34.376 [info] > git check-ignore -v -z --stdin [10ms]
+2025-03-08 22:30:04.804 [info] > git check-ignore -v -z --stdin [9ms]
+2025-03-08 22:33:18.167 [info] > git check-ignore -v -z --stdin [6ms]
+2025-03-08 22:33:18.751 [info] > git check-ignore -v -z --stdin [7ms]
+2025-03-08 22:33:19.418 [info] > git check-ignore -v -z --stdin [7ms]
+2025-03-08 22:33:29.893 [info] > git check-ignore -v -z --stdin [8ms]

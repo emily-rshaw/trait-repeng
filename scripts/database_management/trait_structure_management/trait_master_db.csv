@@ -1,0 +1,75 @@
+domain,specificity,trait_name,description,parent_trait
+Personality,Broad,Neuroticism,Big Five personality trait of Neuroticism,
+Personality,Broad,Extraversion,Big Five personality trait of Extraversion,
+Personality,Broad,Openness,Big Five personality trait of Openness,
+Personality,Broad,Agreeableness,Big Five personality trait of Agreeableness,
+Personality,Broad,Conscientiousness,Big Five personality trait of Conscientiousness,
+Personality,Specific,N1 Anxiety,A facet of Neuroticism,Neuroticism
+Personality,Specific,N2 Anger,A facet of Neuroticism,Neuroticism
+Personality,Specific,N3 Depression,A facet of Neuroticism,Neuroticism
+Personality,Specific,N4 Self-Consciousness,A facet of Neuroticism,Neuroticism
+Personality,Specific,N5 Immoderation,A facet of Neuroticism,Neuroticism
+Personality,Specific,N6 Vulnerability,A facet of Neuroticism,Neuroticism
+Personality,Specific,E1 Friendliness,A facet of Extraversion,Extraversion
+Personality,Specific,E2 Gregariousness,A facet of Extraversion,Extraversion
+Personality,Specific,E3 Assertiveness,A facet of Extraversion,Extraversion
+Personality,Specific,E4 Activity level,A facet of Extraversion,Extraversion
+Personality,Specific,E5 Excitement Seeking,A facet of Extraversion,Extraversion
+Personality,Specific,E6 Cheerfulness,A facet of Extraversion,Extraversion
+Personality,Specific,O1 Imagination,A facet of Openness,Openness
+Personality,Specific,O2 Artistic interests,A facet of Openness,Openness
+Personality,Specific,O3 Emotionality,A facet of Openness,Openness
+Personality,Specific,O4 Adventurousness,A facet of Openness,Openness
+Personality,Specific,O5 Intellect,A facet of Openness,Openness
+Personality,Specific,O6 Liberalism,A facet of Openness,Openness
+Personality,Specific,A1 Trust,A facet of Agreeableness,Agreeableness
+Personality,Specific,A2 Morality,A facet of Agreeableness,Agreeableness
+Personality,Specific,A3 Altruism,A facet of Agreeableness,Agreeableness
+Personality,Specific,A4 Cooperation,A facet of Agreeableness,Agreeableness
+Personality,Specific,A5 Modesty,A facet of Agreeableness,Agreeableness
+Personality,Specific,A6 Sympathy,A facet of Agreeableness,Agreeableness
+Personality,Specific,C1 Self-Efficacy,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C2 Orderliness,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C3 Dutifulness,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C4 Achievement-striving,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C5 Self-Discipline,A facet of Conscientiousness,Conscientiousness
+Personality,Specific,C6 Cautiousness,A facet of Conscientiousness,Conscientiousness
+Moral,Broad,Self-transcendence,Concern for welfare and interests of others,
+Moral,Broad,Conservation,"Preference for tradition, conformity and security",
+Moral,Broad,Self-enhancement,Pursuit of personal interests and relative success,
+Moral,Broad,Openness to change,"Readiness for new ideas, actions and experiences",
+Moral,Specific,Benevolence-Dependability,Being a reliable and trustworthy member of the in-group,Self-transcendence
+Moral,Specific,Benevolence-Caring,Devotion to the welfare of in-group members,Self-transcendence
+Moral,Specific,Universalism-Tolerance,Acceptance and understanding of those who are different from oneself,Self-transcendence
+Moral,Specific,Universalism-Concern,"Commitment to equality, justice, and protection for all people",Self-transcendence
+Moral,Specific,Universalism-Nature,Preservation of the natural environment,Self-transcendence
+Moral,Specific,Humility,Recognizing one's insignificance in the larger scheme of things,Self-transcendence
+Moral,Specific,Conformity-Interpersonal,Avoidance of upsetting or harming other people,Conservation
+Moral,Specific,Conformity-Rules,"Compliance with rules, laws, and formal obligations",Conservation
+Moral,Specific,Tradition,"Maintaining and preserving cultural, family, or religious traditions",Conservation
+Moral,Specific,Security-Societal,Safety and stability in the wider society,Conservation
+Moral,Specific,Security-Personal,Safety in one's immediate environment,Conservation
+Moral,Specific,Face,Security and power through maintaining one's public image and avoiding humiliation,Conservation
+Moral,Specific,Power-Resources,Power through control of material and social resources,Self-enhancement
+Moral,Specific,Power-Dominance,Power through exercising control over people,Self-enhancement
+Moral,Specific,Achievement,Personal success through demonstrating competence according to social standards,Self-enhancement
+Moral,Specific,Hedonism,Pleasure and sensuous gratification for oneself,Self-enhancement
+Moral,Specific,Stimulation,"Excitement, novelty, and challenge in life",Openness to change
+Moral,Specific,Self-Direction-Action,The freedom to determine one's own actions,Openness to change
+Moral,Specific,Self-Direction-Thought,The freedom to cultivate one's own ideas and abilities,Openness to change
+Political,Broad,Liberalism,Supporting social equality and progressive reform,
+Political,Broad,Conservatism,Favoring traditional values and established institutions,
+Political,Specific,Welfare benefits,Position on welfare benefits (reverse scored),Liberalism
+Political,Specific,Tax,Position on taxation (reverse scored),Liberalism
+Political,Specific,Immigration,Position on immigration policies (reverse scored),Liberalism
+Political,Specific,Abortion,Position on abortion,Conservatism
+Political,Specific,Limited government,Support for limiting government size and power,Conservatism
+Political,Specific,Military and national security,Support for military and national security measures,Conservatism
+Political,Specific,Religion,Support for religious values in society,Conservatism
+Political,Specific,Gun ownership,Support for the right to own firearms,Conservatism
+Political,Specific,Traditional marriage,Support for traditional definitions of marriage,Conservatism
+Political,Specific,Traditional values,Support for traditional social norms and values,Conservatism
+Political,Specific,Fiscal responsibility,Support for balanced budgets and financial restraint,Conservatism
+Political,Specific,Business,Support for business interests and free enterprise,Conservatism
+Political,Specific,The family unit,Support for traditional family structures,Conservatism
+Political,Specific,Patriotism,Support for national pride and loyalty,Conservatism

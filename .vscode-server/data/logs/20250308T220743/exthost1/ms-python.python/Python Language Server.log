@@ -1,0 +1,23 @@
+2025-03-08 22:17:22.080 [info] [Info  - 10:17:22 PM] (29538) Server root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist
+2025-03-08 22:17:22.081 [info] [Info  - 10:17:22 PM] (29538) Pylance language server 2025.2.1 (pyright version 1.1.393, commit 3763156f) starting
+2025-03-08 22:17:22.081 [info] [Info  - 10:17:22 PM] (29538) Starting service instance "this_studio"
+2025-03-08 22:17:22.134 [info] [Info  - 10:17:22 PM] (29538) Setting environmentName for service "this_studio": "3.10.10 (cloudspace conda)"
+2025-03-08 22:17:22.134 [info] [Info  - 10:17:22 PM] (29538) Setting pythonPath for service "this_studio": "/home/zeus/miniconda3/envs/cloudspace/bin/python"
+2025-03-08 22:17:22.135 [info] [Info  - 10:17:22 PM] (29538) No include entries specified; assuming /teamspace/studios/this_studio
+2025-03-08 22:17:22.136 [info] [Info  - 10:17:22 PM] (29538) Auto-excluding **/node_modules
+2025-03-08 22:17:22.136 [info] [Info  - 10:17:22 PM] (29538) Auto-excluding **/__pycache__
+2025-03-08 22:17:22.137 [info] [Info  - 10:17:22 PM] (29538) Auto-excluding **/.*
+2025-03-08 22:17:22.170 [info] (Client) Pylance async client (2025.2.1) started with python extension (2025.0.0)
+2025-03-08 22:17:22.173 [info] [Info  - 10:17:22 PM] (29538) Assuming Python version 3.10.10.final.0
+2025-03-08 22:17:22.896 [info] [Info  - 10:17:22 PM] (29538) Found 18 source files
+2025-03-08 22:17:22.937 [info] [Info  - 10:17:22 PM] (29538) Background analysis(1) root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist
+2025-03-08 22:17:22.938 [info] [Info  - 10:17:22 PM] (29538) Background analysis(1) started
+2025-03-08 22:17:23.747 [info] [Info  - 10:17:23 PM] (29538) Indexer background runner(2) root directory: file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.vscode-pylance-2025.2.1/dist (index)
+2025-03-08 22:17:23.747 [info] [Info  - 10:17:23 PM] (29538) Indexing(2) started
+2025-03-08 22:17:25.675 [info] [Info  - 10:17:25 PM] (29538) scanned(2) 382 files over 1 exec env
+2025-03-08 22:17:27.434 [info] [Info  - 10:17:27 PM] (29538) [BG(1)] Long operation: checking: file:///teamspace/studios/this_studio/scripts/personality_ui.py (3239ms)
+2025-03-08 22:17:27.435 [info] [Info  - 10:17:27 PM] (29538) [BG(1)] Long operation: analyzing: file:///teamspace/studios/this_studio/scripts/personality_ui.py (3249ms)
+2025-03-08 22:17:28.553 [info] [Info  - 10:17:28 PM] (29538) [IDX(2)] Long operation: index execution environment file:///teamspace/studios/this_studio (2123ms)
+2025-03-08 22:17:28.565 [info] [Info  - 10:17:28 PM] (29538) [IDX(2)] Long operation: index packages file:///teamspace/studios/this_studio (2262ms)
+2025-03-08 22:17:28.565 [info] [Info  - 10:17:28 PM] (29538) indexed(2) 382 files over 1 exec env
+2025-03-08 22:17:28.868 [info] [Info  - 10:17:28 PM] (29538) Indexing finished(2).
