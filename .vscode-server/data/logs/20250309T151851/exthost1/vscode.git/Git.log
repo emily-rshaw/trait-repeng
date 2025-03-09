@@ -441,3 +441,15 @@
 2025-03-09 17:40:24.120 [warning] [GitFileSystemProvider][stat] File not found - git:/teamspace/studios/this_studio/scripts/database_management/verify_traits.py.git?%7B%22path%22%3A%22%2Fteamspace%2Fstudios%2Fthis_studio%2Fscripts%2Fdatabase_management%2Fverify_traits.py%22%2C%22ref%22%3A%22%22%7D
 2025-03-09 17:40:24.290 [info] > git blame --root --incremental 73124b15dc9066cdfcbf5290803fff0a7c969afe -- scripts/database_management/verify_traits.py [9ms]
 2025-03-09 17:40:24.290 [info] fatal: no such path scripts/database_management/verify_traits.py in 73124b15dc9066cdfcbf5290803fff0a7c969afe
+2025-03-09 17:43:27.111 [info] > git check-ignore -v -z --stdin [18ms]
+2025-03-09 17:43:42.137 [info] > git check-ignore -v -z --stdin [8ms]
+2025-03-09 17:43:46.082 [info] > git check-ignore -v -z --stdin [18ms]
+2025-03-09 17:44:01.895 [info] > git check-ignore -v -z --stdin [7ms]
+2025-03-09 17:44:12.475 [info] > git show --textconv :scripts/database_management/verify_traits.py [6ms]
+2025-03-09 17:44:12.476 [info] > git ls-files --stage -- scripts/database_management/verify_traits.py [5ms]
+2025-03-09 17:44:12.481 [info] > git cat-file -s a6e4dc926f031c3725390543f13c72328b6a8f11 [2ms]
+2025-03-09 17:44:16.714 [info] > git ls-files --stage -- .gitignore [5ms]
+2025-03-09 17:44:16.719 [info] > git show --textconv :.gitignore [12ms]
+2025-03-09 17:44:16.721 [info] > git cat-file -s d3ce06429a35f25300a245c5a0d44cf224354450 [5ms]
+2025-03-09 17:44:27.661 [info] > git check-ignore -v -z --stdin [16ms]
+2025-03-09 17:44:32.181 [info] > git check-ignore -v -z --stdin [14ms]
