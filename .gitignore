@@ -11,4 +11,4 @@ prompt.txt
 models/
 .lightning_studio/
 results/database/
-.vscode_server/
+.vscode-server/
