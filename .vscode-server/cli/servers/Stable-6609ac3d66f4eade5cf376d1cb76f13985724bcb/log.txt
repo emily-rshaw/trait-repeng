@@ -5,61 +5,16 @@
 * the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
 * the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
 *
-Server bound to /tmp/code-9e364e73-f25b-438e-9ce3-4c86659193cc
-Extension host agent listening on /tmp/code-9e364e73-f25b-438e-9ce3-4c86659193cc
+Server bound to /tmp/code-d2d8758f-6c31-4b4f-b8a6-ebd5b22c67c0
+Extension host agent listening on /tmp/code-d2d8758f-6c31-4b4f-b8a6-ebd5b22c67c0
 
-[15:18:51] 
-
-
+[21:07:21] 
 
 
-[15:18:56] Extension host agent started.
-[15:18:56] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.0.1-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.0.1-linux-x64/package.json')
-    at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
-    at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
-    at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
-    at async Xc.u (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:38686)
-    at async Xc.scanExtension (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:37235)
-    at async Promise.all (index 1)
-    at async Xc.r (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:35660)
-    at async fl.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:28682)
-    at async Jh.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:20180)
-    at async h7.H (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:9952)
-    at async h7.s (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:7847) {
-  fileOperationResult: 1,
-  options: { preferUnbuffered: true }
-}
-[15:18:56] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/package.json')
-    at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
-    at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
-    at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
-    at async Xc.u (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:38686)
-    at async Xc.scanExtension (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:37235)
-    at async Promise.all (index 3)
-    at async Xc.r (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:35660)
-    at async fl.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:28682)
-    at async Jh.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:20180)
-    at async h7.H (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:9952)
-    at async h7.s (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:7847) {
-  fileOperationResult: 1,
-  options: { preferUnbuffered: true }
-}
-[15:18:56] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-toolsai.jupyter-2025.1.0-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-toolsai.jupyter-2025.1.0-linux-x64/package.json')
-    at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
-    at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
-    at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
-    at async Xc.u (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:38686)
-    at async Xc.scanExtension (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:37235)
-    at async Promise.all (index 6)
-    at async Xc.r (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:35660)
-    at async fl.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:28682)
-    at async Jh.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:20180)
-    at async h7.H (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:9952)
-    at async h7.s (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:7847) {
-  fileOperationResult: 1,
-  options: { preferUnbuffered: true }
-}
-[15:18:56] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.0.1-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.0.1-linux-x64/package.json')
+
+
+[21:07:25] Extension host agent started.
+[21:07:25] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.0.1-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.0.1-linux-x64/package.json')
     at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
     at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
     at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
@@ -74,7 +29,7 @@ Extension host agent listening on /tmp/code-9e364e73-f25b-438e-9ce3-4c86659193cc
   fileOperationResult: 1,
   options: { preferUnbuffered: true }
 }
-[15:18:56] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/package.json')
+[21:07:25] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/package.json')
     at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
     at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
     at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
@@ -89,7 +44,7 @@ Extension host agent listening on /tmp/code-9e364e73-f25b-438e-9ce3-4c86659193cc
   fileOperationResult: 1,
   options: { preferUnbuffered: true }
 }
-[15:18:56] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-toolsai.jupyter-2025.1.0-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-toolsai.jupyter-2025.1.0-linux-x64/package.json')
+[21:07:25] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-toolsai.jupyter-2025.1.0-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-toolsai.jupyter-2025.1.0-linux-x64/package.json')
     at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
     at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
     at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
@@ -104,8 +59,89 @@ Extension host agent listening on /tmp/code-9e364e73-f25b-438e-9ce3-4c86659193cc
   fileOperationResult: 1,
   options: { preferUnbuffered: true }
 }
-[15:18:56] [<unknown>][a315f3a9][ManagementConnection] New connection established.
-[15:18:56] [<unknown>][f81c1eaf][ExtensionHostConnection] New connection established.
-[15:18:57] [<unknown>][f81c1eaf][ExtensionHostConnection] <2356> Launched Extension Host Process.
+[21:07:25] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.0.1-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.0.1-linux-x64/package.json')
+    at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
+    at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
+    at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
+    at async Xc.u (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:38686)
+    at async Xc.scanExtension (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:37235)
+    at async Promise.all (index 1)
+    at async Xc.r (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:35660)
+    at async fl.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:28682)
+    at async Jh.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:20180)
+    at async h7.H (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:9952)
+    at async h7.s (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:7847) {
+  fileOperationResult: 1,
+  options: { preferUnbuffered: true }
+}
+[21:07:25] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/package.json')
+    at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
+    at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
+    at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
+    at async Xc.u (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:38686)
+    at async Xc.scanExtension (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:37235)
+    at async Promise.all (index 3)
+    at async Xc.r (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:35660)
+    at async fl.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:28682)
+    at async Jh.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:20180)
+    at async h7.H (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:9952)
+    at async h7.s (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:7847) {
+  fileOperationResult: 1,
+  options: { preferUnbuffered: true }
+}
+[21:07:25] Qt [Error]: Unable to read file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-toolsai.jupyter-2025.1.0-linux-x64/package.json' (Error: Unable to resolve nonexistent file '/teamspace/studios/this_studio/.vscode-server/extensions/ms-toolsai.jupyter-2025.1.0-linux-x64/package.json')
+    at il.G (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52563)
+    at il.F (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:52388)
+    at async il.D (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:64:51760)
+    at async Xc.u (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:38686)
+    at async Xc.scanExtension (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:37235)
+    at async Promise.all (index 6)
+    at async Xc.r (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:35660)
+    at async fl.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:54:28682)
+    at async Jh.scanAllUserExtensions (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:20180)
+    at async h7.H (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:9952)
+    at async h7.s (file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-6609ac3d66f4eade5cf376d1cb76f13985724bcb/server/out/server-main.js:55:7847) {
+  fileOperationResult: 1,
+  options: { preferUnbuffered: true }
+}
+[21:07:25] [<unknown>][920374f2][ExtensionHostConnection] New connection established.
+[21:07:25] [<unknown>][81122605][ManagementConnection] New connection established.
+[21:07:25] [<unknown>][920374f2][ExtensionHostConnection] <2288> Launched Extension Host Process.
+[21:07:30] Getting Manifest... ms-python.debugpy
+[21:07:30] Installing extension: ms-python.debugpy {
+  productVersion: { version: '1.98.0', date: '2025-03-04T21:06:18.612Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  donotVerifySignature: false,
+  context: { clientTargetPlatform: 'win32-x64' },
+  profileLocation: Er {
+    scheme: 'file',
+    authority: '',
+    path: '/teamspace/studios/this_studio/.vscode-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///teamspace/studios/this_studio/.vscode-server/extensions/extensions.json',
+    _fsPath: '/teamspace/studios/this_studio/.vscode-server/extensions/extensions.json'
+  }
+}
+[21:07:30] Getting Manifest... ms-python.python
+[21:07:30] Getting Manifest... ms-python.vscode-pylance
+[21:07:32] Extension signature verification result for ms-python.debugpy: Success. Internal Code: 0. Executed: true. Duration: 908ms.
+[21:07:33] Extracted extension to file:///teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.4.1-linux-x64: ms-python.debugpy
+[21:07:33] Renamed to /teamspace/studios/this_studio/.vscode-server/extensions/ms-python.debugpy-2025.4.1-linux-x64
+[21:07:33] Extension installed successfully: ms-python.debugpy file:///teamspace/studios/this_studio/.vscode-server/extensions/extensions.json
+[21:07:33] Marked extension as removed ms-python.debugpy-2025.4.0
+rejected promise not handled within 1 second: Error: connect ECONNREFUSED 127.0.0.1:8080
+stack trace: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+[21:07:48] Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 8080
+}
 New EH opened, aborting shutdown
-[15:23:56] New EH opened, aborting shutdown
+[21:12:25] New EH opened, aborting shutdown

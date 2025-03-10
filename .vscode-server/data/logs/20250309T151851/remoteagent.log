@@ -80,3 +80,6 @@
 2025-03-09 15:18:56.873 [info] [<unknown>][f81c1eaf][ExtensionHostConnection] New connection established.
 2025-03-09 15:18:57.045 [info] [<unknown>][f81c1eaf][ExtensionHostConnection] <2356> Launched Extension Host Process.
 2025-03-09 15:23:56.193 [info] New EH opened, aborting shutdown
+2025-03-09 17:48:29.610 [info] [<unknown>][a315f3a9][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-03-09 17:48:29.661 [info] [<unknown>][f81c1eaf][ExtensionHostConnection] <2356> Extension Host Process exited with code: 0, signal: null.
+2025-03-09 17:48:29.661 [info] Last EH closed, waiting before shutting down

@@ -88,7 +88,8 @@ def create_schema(db_path):
         CREATE TABLE IF NOT EXISTS steering_vectors (
             vector_id INTEGER PRIMARY KEY,
             created_by_run_id INTEGER,                  -- the run that created this vector
-            -- need to add success indexes/success scores 
+            vector_rank_score REAl,
+            vector_rank_index INTEGER,            -- technically probably unnormalised...alas 
             vector_data BLOB,                -- storing the actual vector
             is_random INTEGER DEFAULT 0,     -- 0/1, if vector is random/used for control
             FOREIGN KEY (run_id) REFERENCES runs(run_id)

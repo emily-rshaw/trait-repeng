@@ -253,7 +253,7 @@ def plot_similarity_matrices(U, V, output_dir):
     plt.close()
 
 
-def rank_vectors(exp_dct, delta_acts_end, X, Y, forward_batch_size, factor_batch_size):
+def rank_vectors(exp_dct, delta_acts_end, X, Y, forward_batch_size, factor_batch_size, output_dir):
     """Rank the vectors by their effect on the model."""
     scores, indices = exp_dct.rank(
         delta_acts_end, X, Y, 
@@ -261,11 +261,9 @@ def rank_vectors(exp_dct, delta_acts_end, X, Y, forward_batch_size, factor_batch
         batch_size=forward_batch_size, 
         factor_batch_size=factor_batch_size
     )
-    
-    plt.figure()
     sns.histplot(scores.cpu())
     plt.title("Vector Scores Distribution")
-    plt.savefig("vector_scores.png")
+    plt.savefig(os.path.join(output_dir, "vector_scores.png"))
     plt.close()
     
     return scores, indices
@@ -545,7 +543,8 @@ def main(traits_dir, trait, direction, output_dir, model_name, tokenizer_name, s
         X, 
         Y, 
         forward_batch_size, 
-        factor_batch_size
+        factor_batch_size,
+        output_dir
     )
     
     # Create model editor

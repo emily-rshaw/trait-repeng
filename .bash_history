@@ -21,3 +21,5 @@ claude
 claude
 claude
 pip install sqlite3 pandas numpy matplotlib
+claude
+claude
