@@ -253,11 +253,11 @@ def plot_similarity_matrices(U, V, output_dir):
     plt.close()
 
 
-def rank_vectors(exp_dct, delta_acts_end, X, Y, forward_batch_size, factor_batch_size, output_dir):
+def rank_vectors(exp_dct, delta_acts_end, X, Y, forward_batch_size, factor_batch_size, output_dir, target_vec = None):
     """Rank the vectors by their effect on the model."""
     scores, indices = exp_dct.rank(
         delta_acts_end, X, Y, 
-        target_vec=None,
+        target_vec=target_vec,
         batch_size=forward_batch_size, 
         factor_batch_size=factor_batch_size
     )
@@ -389,7 +389,7 @@ def evaluate_vectors(model, tokenizer, model_editor, V, indices, input_scale,
               help="Name of the model to use")
 @click.option("--tokenizer-name", default=None, 
               help="Name of the tokenizer to use (defaults to model-name)")
-@click.option("--system-prompt", default="You are a person", 
+@click.option("--system-prompt", default=None, 
               help="System prompt to use")
 @click.option("--num-samples", default=4, type=int, 
               help="Number of training samples")

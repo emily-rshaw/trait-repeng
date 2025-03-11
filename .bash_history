@@ -23,3 +23,8 @@ claude
 pip install sqlite3 pandas numpy matplotlib
 claude
 claude
+git add .
+git commit -m "addedd success indexes and score to schema and updated rank vectors func to output to output dir"
+git push -u origin dev
+claude
+claude
