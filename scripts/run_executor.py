@@ -168,7 +168,8 @@ def evaluate_vectors_and_capture(
     targets, test_targets, num_eval, max_new_tokens
 ):
     """
-    Evaluate the effect of the top vectors but return completions so we can store them in DB.
+    Evaluate the effect of the top vectors but return completions
+    so we can store them in DB.
     Returns a dict with:
       {
         "unsteered": [(prompt_str, completion_str), ...],
@@ -181,26 +182,31 @@ def evaluate_vectors_and_capture(
     results = {"unsteered": [], "steered": {}}
 
     model_editor.restore()
-    # small subset of prompts for demonstration
+    # Currently: small subset for demonstration
+    # If you want to evaluate the entire dataset, do:
+    # examples_to_test = examples + test_examples
     examples_to_test = examples[:2] + test_examples[:3]
 
     model_inputs = tokenizer(examples_to_test, return_tensors="pt", padding=True).to("cuda")
     unsteered_ids = model.generate(**model_inputs, max_new_tokens=max_new_tokens, do_sample=False)
     unsteered_completions = tokenizer.batch_decode(unsteered_ids, skip_special_tokens=True)
 
+    # Store unsteered
     for (prompt_text, completion_text) in zip(examples_to_test, unsteered_completions):
         results["unsteered"].append((prompt_text, completion_text))
 
-    # 2) Evaluate top vectors with a progress bar
+    # Evaluate top vectors with progress bar
     total_vecs = min(num_eval, len(indices))
     for i in tqdm(range(total_vecs), desc="Evaluating steering vectors"):
+        # Here, indices[i] is already an int after we fix the code below
         vec_idx = indices[i]
 
-        # Restore to unsteered baseline, then apply vector
+        # restore
         model_editor.restore()
+        # steer with the integer index
         model_editor.steer(input_scale * V[:, vec_idx], source_layer_idx)
 
-        # Generate
+        # generate
         steered_ids = model.generate(
             **model_inputs, 
             max_new_tokens=max_new_tokens, 
@@ -208,24 +214,22 @@ def evaluate_vectors_and_capture(
         )
         steered_completions = tokenizer.batch_decode(steered_ids, skip_special_tokens=True)
 
-        # Store in results
+        # store
         results["steered"][vec_idx] = []
-        for prompt_text, completion_text in zip(examples_to_test, steered_completions):
+        for (prompt_text, completion_text) in zip(examples_to_test, steered_completions):
             results["steered"][vec_idx].append((prompt_text, completion_text))
 
     return results
 
-# ------------------------------------------------
-# Main function to execute a run from the DB
-# ------------------------------------------------
 
-def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/teamspace/studios/this_studio/data/psychometric_tests/personality/trait_specific"):
+def execute_run(run_id, db_path="results/database/experiments.db", 
+                traits_dir="/teamspace/studios/this_studio/data/psychometric_tests/personality/trait_specific"):
     """
-    1) Fetch all necessary params from DB (experiment & run).
-    2) Run the full DCT pipeline.
-    3) Store steering vectors & outputs in the DB.
-    4) Update the run row with post-execution data.
-    5) Return final info (duration, etc.).
+    1) Fetch run (and experiment) data from DB.
+    2) Run the DCT pipeline.
+    3) Store vectors & outputs in DB (including steered outputs).
+    4) Update the run row.
+    5) Return final info.
     """
     start_time = time.time()
 
@@ -233,9 +237,7 @@ def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
 
-    # 1) Fetch run + experiment data
-    #    We'll assume columns in the runs table match your schema exactly.
-    #    We'll also pull from experiments for model_name, quantization_level, trait_id, trait_max_or_min, etc.
+    # 1) Load run + experiment
     row = cursor.execute("""
         SELECT 
             r.run_id,
@@ -268,14 +270,13 @@ def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/
         WHERE r.run_id = ?
     """, (run_id,)).fetchone()
 
-    if row is None:
+    if not row:
         conn.close()
         raise ValueError(f"No run found with run_id={run_id}")
 
-    # (Optional) fetch trait_name from traits if needed
+    # Possibly fetch trait_name from traits
     trait_id = row["trait_id"]
     if trait_id is None:
-        # Maybe it's optional; handle as needed
         trait_name = "unknown"
     else:
         trait_row = cursor.execute("""
@@ -285,13 +286,12 @@ def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/
         """, (trait_id,)).fetchone()
         trait_name = trait_row["trait_name"] if trait_row else "unknown"
 
-    direction = row["trait_max_or_min"]  # expected "max" or "min"
+    direction = row["trait_max_or_min"]
     if direction not in ("max", "min"):
         raise ValueError(f"trait_max_or_min must be 'max' or 'min'. Got {direction}")
 
-    # 2) Extract run parameters (no hardcoded defaults!)
-    model_name = row["model_name"]             # from experiments
-    # quantization_level = row["quantization_level"]  # if you want to do something with it
+    # 2) Extract run parameters
+    model_name = row["model_name"]
     seed = row["seed"]
     max_new_tokens = row["max_new_tokens"]
     num_samples = row["num_samples"]
@@ -308,21 +308,18 @@ def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/
     beta = row["beta"]
     max_iters = row["max_iters"]
     target_ratio = row["target_ratio"]
-    input_scale_db = row["input_scale"]  # might be pre-filled or None
+    input_scale_db = row["input_scale"]
     run_description = row["run_description"]
 
     # Set seeds
     torch.set_default_device("cuda")
     torch.manual_seed(seed)
 
-    # Possibly login to HuggingFace if needed
     hf_token = os.environ.get("HUGGINGFACE_HUB_TOKEN", None)
     if hf_token:
         login(token=hf_token)
 
-    # 3) Load the dataset for the trait
-    # dataset_path = select_trait_dataset(traits_dir, trait_name, direction)
-    # DATASET SELECT LOGIC VIA EXPERIMENT ID/RUN_ID/WHATEVER NOT YET IMPLEMENTED, HENCE HARDCODING
+    # 3) Hardcode dataset path for now
     dataset_path = "/teamspace/studios/this_studio/data/psychometric_tests/personality/trait_specific/max_a1_trust.csv"
 
     # 4) Prepare model & tokenizer
@@ -337,29 +334,26 @@ def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/
     sliced_model = create_sliced_model(model, source_layer_idx, target_layer_idx)
 
     # 7) Compute activations
-    eff_num_samples = min(num_samples, len(examples))  # just to avoid index error
+    eff_num_samples = min(num_samples, len(examples))
     X, Y = compute_activations(
-        model, tokenizer, sliced_model, 
-        examples, source_layer_idx, 
-        max_seq_len, eff_num_samples, 
+        model, tokenizer, sliced_model,
+        examples, source_layer_idx,
+        max_seq_len, eff_num_samples,
         forward_batch_size
     )
 
-    # 8) Delta activations
+    # 8) DeltaActivations
     token_idxs = slice(-3, None)
     delta_acts_single = dct.DeltaActivations(sliced_model, target_position_indices=token_idxs)
     _ = vmap(delta_acts_single, in_dims=(1, None, None), out_dims=2, chunk_size=factor_batch_size)
-    # This is just to ensure shape checks, but we don't necessarily need the result
 
-    # 9) Possibly calibrate input_scale if not provided
+    # 9) Possibly calibrate input_scale
     steering_calibrator = dct.SteeringCalibrator(target_ratio=target_ratio)
     if input_scale_db is not None and input_scale_db > 0:
         input_scale = input_scale_db
     else:
         input_scale = steering_calibrator.calibrate(
-            delta_acts_single, 
-            X.cuda(), 
-            Y.cuda(), 
+            delta_acts_single, X.cuda(), Y.cuda(),
             factor_batch_size=factor_batch_size
         )
 
@@ -371,29 +365,32 @@ def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/
         max_iters, beta
     )
 
-    # 11) Setup slice to end & rank
+    # 11) rank
     slice_to_end = dct.SlicedModel(
-        model, 
-        start_layer=source_layer_idx, 
-        end_layer=model.config.num_hidden_layers - 1, 
+        model,
+        start_layer=source_layer_idx,
+        end_layer=model.config.num_hidden_layers - 1,
         layers_name="model.layers"
     )
     delta_acts_end_single = dct.DeltaActivations(slice_to_end)
-    scores, indices = rank_vectors(exp_dct, delta_acts_end_single, X, Y, forward_batch_size, factor_batch_size)
+    scores, raw_indices = rank_vectors(exp_dct, delta_acts_end_single, X, Y, forward_batch_size, factor_batch_size)
 
-    # 12) Evaluate (capture completions)
+    # Convert raw_indices (torch tensor) -> list of ints
+    indices = raw_indices.cpu().int().tolist()
+
+    # 12) Evaluate
     model_editor = dct.ModelEditor(model, layers_name="model.layers")
     eval_results = evaluate_vectors_and_capture(
-        model, tokenizer, model_editor, V, indices, 
-        input_scale, source_layer_idx, 
-        examples, test_examples, 
-        targets, test_targets, 
+        model, tokenizer, model_editor, V, indices,
+        input_scale, source_layer_idx,
+        examples, test_examples,
+        targets, test_targets,
         num_eval, max_new_tokens
     )
 
-    # 13) Store steering vectors & outputs in DB
-    # One row per factor
+    # 13) Store vectors & outputs in DB
     for i, vec_idx in enumerate(indices):
+        # vec_idx is now a python int
         vec_blob = V[:, vec_idx].detach().cpu().numpy().tobytes()
         rank_score = float(scores[i]) if i < len(scores) else None
 
@@ -405,10 +402,10 @@ def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/
                 vector_data,
                 is_random
             ) VALUES (?, ?, ?, ?, ?)
-        """, (run_id, rank_score, int(vec_idx), vec_blob, 0))
+        """, (run_id, rank_score, vec_idx, vec_blob, 0))
         vector_id = cursor.lastrowid
 
-        # Store steered completions
+        # Insert steered completions if this vec_idx is in eval_results["steered"]
         if vec_idx in eval_results["steered"]:
             for (prompt_text, completion_text) in eval_results["steered"][vec_idx]:
                 cursor.execute("""
@@ -431,7 +428,7 @@ def execute_run(run_id, db_path="results/database/experiments.db", traits_dir="/
             ) VALUES (?, ?, ?, ?)
         """, (run_id, None, None, completion_text))
 
-    # 14) Update run with final duration & input_scale
+    # 14) Update run
     duration = time.time() - start_time
     cursor.execute("""
         UPDATE runs

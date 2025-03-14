@@ -28,3 +28,6 @@ git commit -m "addedd success indexes and score to schema and updated rank vecto
 git push -u origin dev
 claude
 claude
+git add .
+git commit -m "introduce experiment manager, sort out db schema, get new main run executor script, need to fix weird bug of outputs not being logged, although sorting out how prompt dbs are stored may resolve this"
+git push -u origin dev
