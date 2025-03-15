@@ -221,6 +221,20 @@ def evaluate_vectors_and_capture(
 
     return results
 
+def extract_after_assistant(full_text: str) -> str:
+    """
+    Returns everything after the substring 'assistant'.
+    If 'assistant' is not found, returns the full text unchanged.
+    """
+    # Lowercase search for robust matching
+    idx = full_text.lower().find("assistant")
+    if idx == -1:
+        return full_text  # fallback: 'assistant' not found
+    # Get everything after 'assistant'
+    # If your text is "assistant:" or "assistant\n", adjust accordingly
+    # e.g. if you want to skip "assistant" plus a space or colon, do + 9 or so
+    return full_text[idx + len("assistant"):].lstrip(": \n")
+
 
 def execute_run(run_id, db_path="results/database/experiments.db", 
                 traits_dir="/teamspace/studios/this_studio/data/psychometric_tests/personality/trait_specific"):
@@ -408,6 +422,7 @@ def execute_run(run_id, db_path="results/database/experiments.db",
         # Insert steered completions if this vec_idx is in eval_results["steered"]
         if vec_idx in eval_results["steered"]:
             for (prompt_text, completion_text) in eval_results["steered"][vec_idx]:
+                final_text = extract_after_assistant(completion_text)
                 cursor.execute("""
                     INSERT INTO outputs (
                         run_id,
@@ -415,10 +430,11 @@ def execute_run(run_id, db_path="results/database/experiments.db",
                         vector_id,
                         output_text
                     ) VALUES (?, ?, ?, ?)
-                """, (run_id, None, vector_id, completion_text))
+                """, (run_id, None, vector_id, final_text))
 
     # Unsteered completions
     for (prompt_text, completion_text) in eval_results["unsteered"]:
+        final_text = extract_after_assistant(completion_text)
         cursor.execute("""
             INSERT INTO outputs (
                 run_id,
@@ -426,7 +442,7 @@ def execute_run(run_id, db_path="results/database/experiments.db",
                 vector_id,
                 output_text
             ) VALUES (?, ?, ?, ?)
-        """, (run_id, None, None, completion_text))
+        """, (run_id, None, None, final_text))
 
     # 14) Update run
     duration = time.time() - start_time

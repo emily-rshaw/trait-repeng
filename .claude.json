@@ -1,5 +1,5 @@
 {
-  "numStartups": 17,
+  "numStartups": 20,
   "theme": "dark-ansi",
   "customApiKeyResponses": {
     "approved": [
@@ -20,11 +20,17 @@
   "projects": {
     "/teamspace/studios/this_studio": {
       "allowedTools": [
+        "Bash(PYTHONPATH=. python -m pytest tests/test_experiment_manager.py --cov=scripts)",
+        "Bash(PYTHONPATH=. python -m pytest tests/test_experiment_manager.py --cov=scripts.experiment_manager --cov-report=term-missing)",
         "Bash(find:*)",
         "Bash(pip install:*)",
+        "Bash(pytest:*)",
         "Bash(python:*)"
       ],
       "history": [
+        "tests/test_experiment_manager.py ........F                                                                                                    [ 75%]\ntests/test_run_executor.py ...                                                                                                                [100%]\n\n===================================================================== FAILURES ======================================================================\n__________________________________________________________ test_run_main_if_module_is_main __________________________________________________________\n\nthing = <module 'scripts' (<_frozen_importlib_external._NamespaceLoader object at 0x7fabecc4c790>)>, comp = 'experiment_manager'\nimport_path = 'scripts.experiment_manager'\n\n    def _dot_lookup(thing, comp, import_path):\n        try:\n>           return getattr(thing, comp)\nE           AttributeError: module 'scripts' has no attribute 'experiment_manager'\n\n/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/unittest/mock.py:1248: AttributeError\n\nDuring handling of the above exception, another exception occurred:\n\nargs = (), keywargs = {}\n\n    @wraps(func)\n    def patched(*args, **keywargs):\n>       with self.decoration_helper(patched,\n                                    args,\n                                    keywargs) as (newargs, newkeywargs):\n\n/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/unittest/mock.py:1376: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/contextlib.py:135: in __enter__\n    return next(self.gen)\n/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/unittest/mock.py:1358: in decoration_helper\n    arg = exit_stack.enter_context(patching)\n/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/contextlib.py:492: in enter_context\n    result = _cm_type.__enter__(cm)\n/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/unittest/mock.py:1431: in __enter__\n    self.target = self.getter()\n/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/unittest/mock.py:1618: in <lambda>\n    getter = lambda: _importer(target)\n/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/unittest/mock.py:1261: in _importer\n    thing = _dot_lookup(thing, comp, import_path)",
+        "modify test_experiment_manager.py to ensure it has 100% coverage",
+        "Write a script that tests run_executor.py in test_run_executor.py",
         "git add .",
         "you need to add and commit everything first",
         "get all my git commited and synced to dev origin",
@@ -81,14 +87,14 @@
         "synthetic.ipynb"
       ],
       "exampleFilesGeneratedAt": 1741470798411,
-      "lastCost": 0.08104005,
-      "lastAPIDuration": 24336,
-      "lastDuration": 157028,
-      "lastLinesAdded": 0,
-      "lastLinesRemoved": 0,
-      "lastSessionId": "1a43363c-6d60-4c41-9603-6eca88fa89e9"
+      "lastCost": 0.12231824999999996,
+      "lastAPIDuration": 35280,
+      "lastDuration": 134553,
+      "lastLinesAdded": 5,
+      "lastLinesRemoved": 5,
+      "lastSessionId": "3649a72e-6d04-45c6-b854-7805aa707662"
     }
   },
-  "lastReleaseNotesSeen": "0.2.36",
+  "lastReleaseNotesSeen": "0.2.45",
   "hasUsedBackslashReturn": true
 }

@@ -191,7 +191,7 @@ def main():
             "backward_batch_size": 1,
             "factor_batch_size": 128,
             "num_eval": 128,
-            "system_prompt": None,
+            "system_prompt": "You are a person",
             "dim_output_projection": 32,
             "beta": 1.0,
             "max_iters": 10,
@@ -211,5 +211,10 @@ def main():
 
     mgr.close()
 
-if __name__ == "__main__":
-    main()
+# This is a helper function to allow testing the entry point
+def run_main_if_module_is_main():
+    if __name__ == "__main__":
+        main()
+
+# Call the helper function 
+run_main_if_module_is_main()

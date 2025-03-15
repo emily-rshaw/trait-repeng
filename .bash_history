@@ -31,3 +31,9 @@ claude
 git add .
 git commit -m "introduce experiment manager, sort out db schema, get new main run executor script, need to fix weird bug of outputs not being logged, although sorting out how prompt dbs are stored may resolve this"
 git push -u origin dev
+claude
+pytest
+claude
+pytest
+claude
+pytest
