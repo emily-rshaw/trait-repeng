@@ -37,3 +37,8 @@ claude
 pytest
 claude
 pytest
+git add .
+git commit -m "add debugging"
+git push -u origin dev
+claude
+pytest

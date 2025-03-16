@@ -96,6 +96,7 @@ def create_schema(db_path):
             prompt_id INTEGER PRIMARY KEY,
             prompt_set_id INTEGER,
             prompt_text TEXT,
+            target_response TEXT,
             FOREIGN KEY (prompt_set_id) REFERENCES prompt_sets(prompt_set_id)
         )
     ''')

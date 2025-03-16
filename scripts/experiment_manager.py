@@ -26,6 +26,71 @@ class ExperimentManager:
         self.cursor = self.conn.cursor()
 
     #########################################################################
+    #                   PROMPT METHODS
+    #########################################################################
+    
+    # 1) create_prompt_set
+    def create_prompt_set(self, trait_id, set_name, set_closed_or_open_ended, set_description):
+        sql = """
+        INSERT INTO prompt_sets (
+            trait_id,
+            set_name,
+            set_closed_or_open_ended,
+            set_description
+        ) VALUES (?, ?, ?, ?)
+        """
+        self.cursor.execute(sql, (trait_id, set_name, set_closed_or_open_ended, set_description))
+        self.conn.commit()
+        return self.cursor.lastrowid
+
+    # 2) add_prompt_to_set (with optional target_response)
+    def add_prompt_to_set(self, prompt_set_id, prompt_text, target_response=None):
+        sql = """
+        INSERT INTO prompts (
+            prompt_set_id,
+            prompt_text,
+            target_response
+        ) VALUES (?, ?, ?)
+        """
+        self.cursor.execute(sql, (prompt_set_id, prompt_text, target_response))
+        self.conn.commit()
+        return self.cursor.lastrowid
+
+    # 3) link_experiment_prompt_set
+    def link_experiment_prompt_set(self, experiment_id, prompt_set_id):
+        sql = """
+        INSERT OR IGNORE INTO experiment_prompt_sets (
+            experiment_id,
+            prompt_set_id
+        ) VALUES (?, ?)
+        """
+        self.cursor.execute(sql, (experiment_id, prompt_set_id))
+        self.conn.commit()
+
+    # 4) get_prompt_sets_for_experiment
+    def get_prompt_sets_for_experiment(self, experiment_id):
+        sql = """
+        SELECT ps.*
+        FROM prompt_sets ps
+        JOIN experiment_prompt_sets eps 
+          ON ps.prompt_set_id = eps.prompt_set_id
+        WHERE eps.experiment_id = ?
+        """
+        rows = self.cursor.execute(sql, (experiment_id,)).fetchall()
+        return rows  # or parse into a list of dicts
+
+    # 5) get_prompts_for_prompt_set
+    def get_prompts_for_prompt_set(self, prompt_set_id):
+        sql = """
+        SELECT prompt_text, target_response
+        FROM prompts
+        WHERE prompt_set_id = ?
+        """
+        rows = self.cursor.execute(sql, (prompt_set_id,)).fetchall()
+        # Each row has 'prompt_text' and 'target_response'
+        return [(r["prompt_text"], r["target_response"]) for r in rows]
+
+    #########################################################################
     #                   EXPERIMENT METHODS
     #########################################################################
 
@@ -162,6 +227,35 @@ class ExperimentManager:
     def close(self):
         self.conn.close()
 
+def import_prompt_set_from_csv(mgr, csv_path, 
+                               trait_id=None, 
+                               set_name="ImportedSet", 
+                               set_closed_or_open_ended="open", 
+                               set_description="Imported from CSV"):
+    import csv
+
+    # 1) Create the prompt set
+    p_set_id = mgr.create_prompt_set(
+        trait_id=trait_id,
+        set_name=set_name,
+        set_closed_or_open_ended=set_closed_or_open_ended,
+        set_description=set_description
+    )
+
+    # 2) Read CSV
+    with open(csv_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            prompt_text = row["test"]
+            target_resp = row.get("goal", None)
+            # 3) Add each prompt
+            mgr.add_prompt_to_set(
+                p_set_id,
+                prompt_text,
+                target_resp
+            )
+
+    return p_set_id
 
 def main():
     mgr = ExperimentManager()
