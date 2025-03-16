@@ -264,11 +264,16 @@ def main():
     experiment_id = mgr.create_experiment(
         model_name="meta-llama/Llama-3.2-3B-Instruct",
         quantization_level="fp16",
-        trait_id=None,
+        trait_id=30,
         trait_max_or_min="max",
-        description="Demo experiment with no hardcoded run params, integrated with run_executor"
+        description="First prompt-set integrated experiment"
     )
     print(f"Created experiment {experiment_id}")
+
+    desired_prompt_set_ids = [6]
+
+    for prompt_set_id in desired_prompt_set_ids:
+        mgr.link_experiment_prompt_set(experiment_id, prompt_set_id)
 
     # 2) Define multiple run parameter dicts
     run_params_list = []

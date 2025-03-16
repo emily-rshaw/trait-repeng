@@ -1,0 +1,115 @@
+Refusal Rate by is_high_score:
+is_high_score
+False    0.219231
+True     0.289062
+Name: is_refusal, dtype: float64
+
+Prompt ID 121 - Regression results:
+Coefficient: -0.0004
+Intercept: 2.3032
+R-squared: 0.0063
+
+Prompt ID 124 - Regression results:
+Coefficient: -0.0001
+Intercept: 3.3988
+R-squared: 0.0001
+
+Mean rating_extracted by prompt_id and is_high_score:
+prompt_id  is_high_score
+121        False            2.302885
+           True             2.202970
+124        False            3.462617
+           True             3.297980
+Name: rating_extracted, dtype: float64
+
+Phrase category distribution overall:
+phrase_category
+refusal                       131
+i would rate myself           113
+i would rate the statement     87
+unknown                        55
+i am/feel                      34
+i'd rate myself                30
+numeric_with_explanation       26
+i would rate                   12
+numeric_only                   11
+explicit_numeric_rating         6
+for the statement               4
+the statement is                4
+i'd rate                        2
+i'd rate the statement          1
+Name: count, dtype: int64
+
+Percentage distribution:
+phrase_category
+refusal                       25.39
+i would rate myself           21.90
+i would rate the statement    16.86
+unknown                       10.66
+i am/feel                      6.59
+i'd rate myself                5.81
+numeric_with_explanation       5.04
+i would rate                   2.33
+numeric_only                   2.13
+explicit_numeric_rating        1.16
+for the statement              0.78
+the statement is               0.78
+i'd rate                       0.39
+i'd rate the statement         0.19
+Name: proportion, dtype: float64
+
+Phrase category distribution by high vs low vector score (%):
+is_high_score               False  True 
+phrase_category                         
+explicit_numeric_rating      1.54   0.78
+for the statement            1.54   0.00
+i am/feel                    7.31   5.86
+i would rate                 3.85   0.78
+i would rate myself         22.31  21.48
+i would rate the statement  15.77  17.97
+i'd rate                     0.77   0.00
+i'd rate myself              6.15   5.47
+i'd rate the statement       0.38   0.00
+numeric_only                 2.31   1.95
+numeric_with_explanation     6.54   3.52
+refusal                     21.92  28.91
+the statement is             1.15   0.39
+unknown                      8.46  12.89
+
+Rating stats by phrase category:
+                             mean  median    std  count
+phrase_category                                        
+explicit_numeric_rating     10.33    4.00  10.61      6
+for the statement            2.50    2.50   0.50      3
+i am/feel                    3.48    4.00   1.09     31
+i would rate                 3.17    3.50   1.19     12
+i would rate myself          2.71    2.00   0.90    113
+i would rate the statement   3.01    3.00   1.10     87
+i'd rate                     3.50    3.50   2.12      2
+i'd rate myself              2.93    2.75   0.91     30
+i'd rate the statement       2.50    2.50    NaN      1
+numeric_only                 2.91    3.00   1.14     11
+numeric_with_explanation     2.00    2.00   1.10     26
+refusal                      2.24    2.00   1.14     91
+the statement is             1.00    1.00   0.00      2
+unknown                       NaN     NaN    NaN      0
+
+Rating extraction success rate by category (%):
+phrase_category
+explicit_numeric_rating       100.00
+for the statement              75.00
+i am/feel                      91.18
+i would rate                  100.00
+i would rate myself           100.00
+i would rate the statement    100.00
+i'd rate                      100.00
+i'd rate myself               100.00
+i'd rate the statement        100.00
+numeric_only                  100.00
+numeric_with_explanation      100.00
+refusal                        69.47
+the statement is               50.00
+unknown                         0.00
+Name: has_rating, dtype: float64
+
+Analysis complete (direct vector score regression).

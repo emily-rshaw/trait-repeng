@@ -39,79 +39,85 @@ def load_examples_for_experiment(
     seed=325
 ):
     """
-    Replaces the old CSV-based approach.
     1) Fetch all prompt sets linked to `experiment_id`.
-    2) Gather (prompt_text, target_response) from those sets.
-    3) Shuffle & do train vs. test split.
-    4) Apply chat template with `system_prompt` if provided.
+    2) Gather (prompt_id, prompt_text, target_response) from those sets.
+    3) Shuffle & do train vs. test split (train = num_samples, test = up to 32).
+    4) For each item, apply chat template with system prompt => create final strings
+       *BUT* also track which prompt_id each final string corresponds to.
     
-    Returns: examples, targets, test_examples, test_targets
+    Returns:
+      examples, targets, test_examples, test_targets,
+      example_prompt_ids, test_prompt_ids
     """
-
     random.seed(seed)
 
-    # Step A: get all prompt_set_ids for this experiment
+    # 1) find prompt sets
     ps_rows = mgr.cursor.execute('''
         SELECT ps.prompt_set_id
         FROM prompt_sets ps
-        JOIN experiment_prompt_sets eps
-          ON ps.prompt_set_id = eps.prompt_set_id
+        JOIN experiment_prompt_sets eps ON ps.prompt_set_id = eps.prompt_set_id
         WHERE eps.experiment_id = ?
     ''', (experiment_id,)).fetchall()
 
-    # If no prompt sets, raise or handle
     if not ps_rows:
         raise ValueError(f"No prompt sets found for experiment_id={experiment_id}")
 
-    # Step B: gather (prompt_text, target_response) from each prompt_set
-    all_prompts = []
+    all_items = []  # will hold tuples (prompt_id, prompt_text, target_response)
     for row in ps_rows:
         p_set_id = row["prompt_set_id"]
         prompt_rows = mgr.cursor.execute('''
-            SELECT prompt_text, target_response
+            SELECT prompt_id, prompt_text, target_response
             FROM prompts
             WHERE prompt_set_id = ?
         ''', (p_set_id,)).fetchall()
-        # Each row is something like { 'prompt_text': ..., 'target_response': ... }
-        # Convert to (question, goal) pairs
-        all_prompts.extend([(r["prompt_text"], r["target_response"]) for r in prompt_rows])
+        for p_row in prompt_rows:
+            pid = p_row["prompt_id"]
+            txt = p_row["prompt_text"]
+            goal = p_row["target_response"]
+            all_items.append((pid, txt, goal))
 
-    # Step C: shuffle & slice into train + test
-    random.shuffle(all_prompts)
-    # We'll mimic the old approach: first `num_samples` for train, next 32 for test
-    clipped_data = all_prompts[: num_samples + 32]
+    # shuffle
+    random.shuffle(all_items)
+    # slice
+    clipped = all_items[: num_samples + 32]
+    train_data = clipped[: num_samples]
+    test_data = clipped[num_samples : num_samples+32]
 
-    train_data = clipped_data[:num_samples]
-    test_data = clipped_data[num_samples : num_samples+32]
-
-    # Step D: optionally prepend a system prompt
     chat_init = []
     if system_prompt:
         chat_init = [{'content': system_prompt, 'role': 'system'}]
 
-    # Build the final four lists
+    # We'll build final strings plus parallel arrays for the prompt IDs
     examples, targets = [], []
     test_examples, test_targets = [], []
+    example_prompt_ids, test_prompt_ids = [], []
 
-    # For each training item, apply chat template
-    for (question, goal) in train_data:
-        chat = chat_init + [{'content': question, 'role': 'user'}]
+    # TRAIN
+    for (pid, prompt_text, target_resp) in train_data:
+        chat = chat_init + [{'content': prompt_text, 'role': 'user'}]
         formatted_chat = tokenizer.apply_chat_template(
             chat, add_special_tokens=False, tokenize=False, add_generation_prompt=True
         )
         examples.append(formatted_chat)
-        targets.append(goal)
+        targets.append(target_resp)
+        example_prompt_ids.append(pid)
 
-    # For each test item
-    for (question, goal) in test_data:
-        chat = chat_init + [{'content': question, 'role': 'user'}]
+    # TEST
+    for (pid, prompt_text, target_resp) in test_data:
+        chat = chat_init + [{'content': prompt_text, 'role': 'user'}]
         formatted_chat = tokenizer.apply_chat_template(
             chat, add_special_tokens=False, tokenize=False, add_generation_prompt=True
         )
         test_examples.append(formatted_chat)
-        test_targets.append(goal)
+        test_targets.append(target_resp)
+        test_prompt_ids.append(pid)
 
-    return examples, targets, test_examples, test_targets
+    # Return 6 parallel lists
+    return (
+        examples, targets,
+        test_examples, test_targets,
+        example_prompt_ids, test_prompt_ids
+    )
 
 
 def prepare_model_and_tokenizer(model_name):
@@ -195,61 +201,57 @@ def rank_vectors(exp_dct, delta_acts_end_single, X, Y, forward_batch_size, facto
     return scores, indices
 
 def evaluate_vectors_and_capture(
-    model, tokenizer, model_editor, V, indices, input_scale, 
-    source_layer_idx, examples, test_examples, 
-    targets, test_targets, num_eval, max_new_tokens
+    model, tokenizer, model_editor, V, indices, input_scale,
+    source_layer_idx, 
+    examples, test_examples, 
+    targets, test_targets,
+    example_prompt_ids, test_prompt_ids,  # new parallel lists
+    num_eval, max_new_tokens
 ):
     """
-    Evaluate the effect of the top vectors but return completions
-    so we can store them in DB.
-    Returns a dict with:
+    Similar to old evaluate_vectors_and_capture, but we also track the prompt_id
+    for each example/test item, storing them in 'steered' and 'unsteered' dict.
+    
+    Returns:
       {
-        "unsteered": [(prompt_str, completion_str), ...],
+        "unsteered": [(prompt_id, prompt_text, completion_text), ...],
         "steered": {
-           vec_id_1: [(prompt_str, completion_str), ...],
-           vec_id_2: ...
+           vec_idx_1: [(prompt_id, prompt_text, completion_text), ...],
+           ...
         }
       }
     """
     results = {"unsteered": [], "steered": {}}
 
     model_editor.restore()
-    # Currently: small subset for demonstration
-    # If you want to evaluate the entire dataset, do:
-    # examples_to_test = examples + test_examples
+    # for demonstration, we only evaluate 2 from train + 3 from test
     examples_to_test = examples[:2] + test_examples[:3]
+    prompt_ids_to_test = example_prompt_ids[:2] + test_prompt_ids[:3]
 
     model_inputs = tokenizer(examples_to_test, return_tensors="pt", padding=True).to("cuda")
     unsteered_ids = model.generate(**model_inputs, max_new_tokens=max_new_tokens, do_sample=False)
     unsteered_completions = tokenizer.batch_decode(unsteered_ids, skip_special_tokens=True)
 
-    # Store unsteered
-    for (prompt_text, completion_text) in zip(examples_to_test, unsteered_completions):
-        results["unsteered"].append((prompt_text, completion_text))
+    # store unsteered
+    for (pid, prompt_str, completion_str) in zip(prompt_ids_to_test, examples_to_test, unsteered_completions):
+        results["unsteered"].append((pid, prompt_str, completion_str))
 
-    # Evaluate top vectors with progress bar
     total_vecs = min(num_eval, len(indices))
     for i in tqdm(range(total_vecs), desc="Evaluating steering vectors"):
-        # Here, indices[i] is already an int after we fix the code below
         vec_idx = indices[i]
 
-        # restore
         model_editor.restore()
-        # steer with the integer index
         model_editor.steer(input_scale * V[:, vec_idx], source_layer_idx)
 
-        # generate
-        steered_ids = model.generate(
-            **model_inputs, 
-            max_new_tokens=max_new_tokens, 
-            do_sample=False
-        )
+        steered_ids = model.generate(**model_inputs, max_new_tokens=max_new_tokens, do_sample=False)
         steered_completions = tokenizer.batch_decode(steered_ids, skip_special_tokens=True)
 
-        # store
-        results["steered"][vec_idx] = []
-        for (prompt_text, completion_text) in zip(examples_to_test, steered_completions):
-            results["steered"][vec_idx].append((prompt_text, completion_text))
+        # store with prompt_id
+        gathered = []
+        for (pid, prompt_str, completion_str) in zip(prompt_ids_to_test, examples_to_test, steered_completions):
+            gathered.append((pid, prompt_str, completion_str))
+
+        results["steered"][vec_idx] = gathered
 
     return results
 
@@ -268,13 +270,24 @@ def extract_after_assistant(full_text: str) -> str:
     return full_text[idx + len("assistant"):].lstrip(": \n")
 
 
+def extract_after_assistant(full_text: str) -> str:
+    """
+    Strips everything up to 'assistant' if desired.
+    """
+    idx = full_text.lower().find("assistant")
+    if idx == -1:
+        return full_text
+    return full_text[idx + len("assistant"):].lstrip(": \n")
+
+
 def execute_run(run_id, db_path="results/database/experiments.db"):
     """
-    1) Fetch run (and experiment) data from DB.
-    2) Run the DCT pipeline.
-    3) Store vectors & outputs in DB (including steered outputs).
-    4) Update the run row.
-    5) Return final info.
+    1) Fetch run + experiment from DB
+    2) load examples from DB-based approach (with prompt IDs)
+    3) do DCT pipeline
+    4) store vectors + outputs in DB (including prompt_id)
+    5) update run
+    6) return final info
     """
     start_time = time.time()
 
@@ -282,34 +295,9 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
 
-    # 1) Load run + experiment
+    # fetch run
     row = cursor.execute("""
-        SELECT 
-            r.run_id,
-            r.experiment_id,
-            r.target_vector_id,
-            r.seed,
-            r.max_new_tokens,
-            r.num_samples,
-            r.max_seq_len,
-            r.source_layer_idx,
-            r.target_layer_idx,
-            r.num_factors,
-            r.forward_batch_size,
-            r.backward_batch_size,
-            r.factor_batch_size,
-            r.num_eval,
-            r.system_prompt,
-            r.dim_output_projection,
-            r.beta,
-            r.max_iters,
-            r.target_ratio,
-            r.input_scale,
-            r.run_description,
-            e.model_name,
-            e.quantization_level,
-            e.trait_id,
-            e.trait_max_or_min
+        SELECT r.*, e.*
         FROM runs r
         JOIN experiments e ON r.experiment_id = e.experiment_id
         WHERE r.run_id = ?
@@ -319,23 +307,7 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         conn.close()
         raise ValueError(f"No run found with run_id={run_id}")
 
-    # Possibly fetch trait_name from traits
-    trait_id = row["trait_id"]
-    if trait_id is None:
-        trait_name = "unknown"
-    else:
-        trait_row = cursor.execute("""
-            SELECT trait_name
-            FROM traits
-            WHERE trait_id = ?
-        """, (trait_id,)).fetchone()
-        trait_name = trait_row["trait_name"] if trait_row else "unknown"
-
-    direction = row["trait_max_or_min"]
-    if direction not in ("max", "min"):
-        raise ValueError(f"trait_max_or_min must be 'max' or 'min'. Got {direction}")
-
-    # 2) Extract run parameters
+    # gather run params
     experiment_id = row["experiment_id"]
     model_name = row["model_name"]
     seed = row["seed"]
@@ -357,36 +329,41 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
     input_scale_db = row["input_scale"]
     run_description = row["run_description"]
 
-    # 2) Set seeds
     torch.set_default_device("cuda")
     torch.manual_seed(seed)
 
+    from huggingface_hub import login
     hf_token = os.environ.get("HUGGINGFACE_HUB_TOKEN", None)
     if hf_token:
         login(token=hf_token)
-    
+
+    model, tokenizer = prepare_model_and_tokenizer(model_name)
+
+    # connect to the manager to load examples
     from experiment_manager import ExperimentManager
     mgr = ExperimentManager(db_path)
 
-    # 3) load examples from the DB-based approach
-    examples, targets, test_examples, test_targets = load_examples_for_experiment(
+    # load DB-based examples with prompt IDs
+    (
+        examples, targets, 
+        test_examples, test_targets,
+        example_prompt_ids, test_prompt_ids
+    ) = load_examples_for_experiment(
         mgr,
         experiment_id,
-        tokenizer,
+        tokenizer,  # We'll set 'tokenizer' after we load the actual HF model
         num_samples,
         system_prompt=system_prompt,
         seed=seed
     )
-    
+
     mgr.close()
 
-    # 4) Prepare model & tokenizer
-    model, tokenizer = prepare_model_and_tokenizer(model_name)
-
-    # 6) Create sliced model
+    # create sliced model
+    from dct import SlicedModel, DeltaActivations
     sliced_model = create_sliced_model(model, source_layer_idx, target_layer_idx)
 
-    # 7) Compute activations
+    # compute activations
     eff_num_samples = min(num_samples, len(examples))
     X, Y = compute_activations(
         model, tokenizer, sliced_model,
@@ -395,22 +372,23 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         forward_batch_size
     )
 
-    # 8) DeltaActivations
-    token_idxs = slice(-3, None)
-    delta_acts_single = dct.DeltaActivations(sliced_model, target_position_indices=token_idxs)
-    _ = vmap(delta_acts_single, in_dims=(1, None, None), out_dims=2, chunk_size=factor_batch_size)
+    # delta acts
+    delta_acts_single = dct.DeltaActivations(sliced_model, target_position_indices=slice(-3,None))
+    _ = vmap(delta_acts_single, in_dims=(1,None,None), out_dims=2, chunk_size=factor_batch_size)
 
-    # 9) Possibly calibrate input_scale
+    # calibrate steering
     steering_calibrator = dct.SteeringCalibrator(target_ratio=target_ratio)
     if input_scale_db is not None and input_scale_db > 0:
         input_scale = input_scale_db
     else:
         input_scale = steering_calibrator.calibrate(
-            delta_acts_single, X.cuda(), Y.cuda(),
+            delta_acts_single, 
+            X.cuda(), 
+            Y.cuda(), 
             factor_batch_size=factor_batch_size
         )
 
-    # 10) Train DCT
+    # train DCT
     exp_dct, U, V = train_dct_model(
         delta_acts_single, X, Y,
         num_factors, backward_batch_size, factor_batch_size,
@@ -418,7 +396,7 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         max_iters, beta
     )
 
-    # 11) rank
+    # rank
     slice_to_end = dct.SlicedModel(
         model,
         start_layer=source_layer_idx,
@@ -427,26 +405,25 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
     )
     delta_acts_end_single = dct.DeltaActivations(slice_to_end)
     scores, raw_indices = rank_vectors(exp_dct, delta_acts_end_single, X, Y, forward_batch_size, factor_batch_size)
-
-    # Convert raw_indices (torch tensor) -> list of ints
     indices = raw_indices.cpu().int().tolist()
 
-    # 12) Evaluate
-    model_editor = dct.ModelEditor(model, layers_name="model.layers")
+    # evaluate + capture
+    from dct import ModelEditor
+    model_editor = ModelEditor(model, layers_name="model.layers")
     eval_results = evaluate_vectors_and_capture(
         model, tokenizer, model_editor, V, indices,
         input_scale, source_layer_idx,
         examples, test_examples,
         targets, test_targets,
+        example_prompt_ids, test_prompt_ids,  # new parallel IDs
         num_eval, max_new_tokens
     )
 
-    # 13) Store vectors & outputs in DB
+    # store vectors, outputs
+    # steering_vectors
     for i, vec_idx in enumerate(indices):
-        # vec_idx is now a python int
         vec_blob = V[:, vec_idx].detach().cpu().numpy().tobytes()
         rank_score = float(scores[i]) if i < len(scores) else None
-
         cursor.execute("""
             INSERT INTO steering_vectors (
                 created_by_run_id,
@@ -458,10 +435,10 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         """, (run_id, rank_score, vec_idx, vec_blob, 0))
         vector_id = cursor.lastrowid
 
-        # Insert steered completions if this vec_idx is in eval_results["steered"]
+        # for steered completions
         if vec_idx in eval_results["steered"]:
-            for (prompt_text, completion_text) in eval_results["steered"][vec_idx]:
-                final_text = extract_after_assistant(completion_text)
+            for (prompt_id, prompt_str, completion_str) in eval_results["steered"][vec_idx]:
+                final_text = extract_after_assistant(completion_str)
                 cursor.execute("""
                     INSERT INTO outputs (
                         run_id,
@@ -469,11 +446,11 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
                         vector_id,
                         output_text
                     ) VALUES (?, ?, ?, ?)
-                """, (run_id, None, vector_id, final_text))
+                """, (run_id, prompt_id, vector_id, final_text))
 
-    # Unsteered completions
-    for (prompt_text, completion_text) in eval_results["unsteered"]:
-        final_text = extract_after_assistant(completion_text)
+    # unsteered
+    for (prompt_id, prompt_str, completion_str) in eval_results["unsteered"]:
+        final_text = extract_after_assistant(completion_str)
         cursor.execute("""
             INSERT INTO outputs (
                 run_id,
@@ -481,9 +458,9 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
                 vector_id,
                 output_text
             ) VALUES (?, ?, ?, ?)
-        """, (run_id, None, None, final_text))
+        """, (run_id, prompt_id, None, final_text))
 
-    # 14) Update run
+    # update run
     duration = time.time() - start_time
     cursor.execute("""
         UPDATE runs
@@ -495,11 +472,8 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
     conn.commit()
     conn.close()
 
-    # 15) Return final info
     return {
         "run_id": run_id,
-        "trait_name": trait_name,
-        "direction": direction,
         "duration_in_seconds": duration,
         "input_scale": input_scale,
         "num_vectors_stored": len(indices),
