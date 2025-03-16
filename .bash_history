@@ -42,3 +42,8 @@ git commit -m "add debugging"
 git push -u origin dev
 claude
 pytest
+git add .
+git commit -m "add prompt set management to experiment manager"
+git push -u origin dev
+claude
+claude

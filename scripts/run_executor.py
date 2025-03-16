@@ -28,41 +28,73 @@ hf_logging.set_verbosity_error()
 # Existing DCT utility functions (lightly modified)
 # ------------------------------------------------
 
-def select_trait_dataset(traits_dir, trait_name, direction):
+import random
+
+def load_examples_for_experiment(
+    mgr,
+    experiment_id,
+    tokenizer,
+    num_samples,
+    system_prompt=None,
+    seed=325
+):
     """
-    Example usage:
-      select_trait_dataset('trait_specific', 'extraversion', 'max')
+    Replaces the old CSV-based approach.
+    1) Fetch all prompt sets linked to `experiment_id`.
+    2) Gather (prompt_text, target_response) from those sets.
+    3) Shuffle & do train vs. test split.
+    4) Apply chat template with `system_prompt` if provided.
+    
+    Returns: examples, targets, test_examples, test_targets
     """
-    if not os.path.exists(traits_dir):
-        raise ValueError(f"Traits directory '{traits_dir}' does not exist")
 
-    pattern = f"{direction}_{trait_name}.csv"
-    candidates = glob.glob(os.path.join(traits_dir, pattern))
-    if not candidates:
-        # fallback: try partial match or raise error if your design demands exact files
-        raise ValueError(f"No dataset found for trait '{trait_name}' with direction '{direction}' in {traits_dir}")
-
-    return candidates[0]
-
-def load_examples(dataset_path, tokenizer, num_samples, system_prompt, seed):
     random.seed(seed)
-    dataset = pd.read_csv(dataset_path)
-    if 'test' not in dataset.columns or 'goal' not in dataset.columns:
-        raise ValueError(f"Dataset {dataset_path} missing 'test'/'goal' columns")
 
-    questions = dataset['test'].tolist()
-    goals = dataset['goal'].tolist()
-    paired_data = list(zip(questions, goals))
-    random.shuffle(paired_data)
-    paired_data = paired_data[: num_samples + 32]
+    # Step A: get all prompt_set_ids for this experiment
+    ps_rows = mgr.cursor.execute('''
+        SELECT ps.prompt_set_id
+        FROM prompt_sets ps
+        JOIN experiment_prompt_sets eps
+          ON ps.prompt_set_id = eps.prompt_set_id
+        WHERE eps.experiment_id = ?
+    ''', (experiment_id,)).fetchall()
 
+    # If no prompt sets, raise or handle
+    if not ps_rows:
+        raise ValueError(f"No prompt sets found for experiment_id={experiment_id}")
+
+    # Step B: gather (prompt_text, target_response) from each prompt_set
+    all_prompts = []
+    for row in ps_rows:
+        p_set_id = row["prompt_set_id"]
+        prompt_rows = mgr.cursor.execute('''
+            SELECT prompt_text, target_response
+            FROM prompts
+            WHERE prompt_set_id = ?
+        ''', (p_set_id,)).fetchall()
+        # Each row is something like { 'prompt_text': ..., 'target_response': ... }
+        # Convert to (question, goal) pairs
+        all_prompts.extend([(r["prompt_text"], r["target_response"]) for r in prompt_rows])
+
+    # Step C: shuffle & slice into train + test
+    random.shuffle(all_prompts)
+    # We'll mimic the old approach: first `num_samples` for train, next 32 for test
+    clipped_data = all_prompts[: num_samples + 32]
+
+    train_data = clipped_data[:num_samples]
+    test_data = clipped_data[num_samples : num_samples+32]
+
+    # Step D: optionally prepend a system prompt
     chat_init = []
     if system_prompt:
         chat_init = [{'content': system_prompt, 'role': 'system'}]
 
+    # Build the final four lists
     examples, targets = [], []
-    for i in range(min(num_samples, len(paired_data))):
-        question, goal = paired_data[i]
+    test_examples, test_targets = [], []
+
+    # For each training item, apply chat template
+    for (question, goal) in train_data:
         chat = chat_init + [{'content': question, 'role': 'user'}]
         formatted_chat = tokenizer.apply_chat_template(
             chat, add_special_tokens=False, tokenize=False, add_generation_prompt=True
@@ -70,9 +102,8 @@ def load_examples(dataset_path, tokenizer, num_samples, system_prompt, seed):
         examples.append(formatted_chat)
         targets.append(goal)
 
-    test_examples, test_targets = [], []
-    for i in range(num_samples, min(num_samples + 32, len(paired_data))):
-        question, goal = paired_data[i]
+    # For each test item
+    for (question, goal) in test_data:
         chat = chat_init + [{'content': question, 'role': 'user'}]
         formatted_chat = tokenizer.apply_chat_template(
             chat, add_special_tokens=False, tokenize=False, add_generation_prompt=True
@@ -81,6 +112,7 @@ def load_examples(dataset_path, tokenizer, num_samples, system_prompt, seed):
         test_targets.append(goal)
 
     return examples, targets, test_examples, test_targets
+
 
 def prepare_model_and_tokenizer(model_name):
     tokenizer = AutoTokenizer.from_pretrained(
@@ -236,8 +268,7 @@ def extract_after_assistant(full_text: str) -> str:
     return full_text[idx + len("assistant"):].lstrip(": \n")
 
 
-def execute_run(run_id, db_path="results/database/experiments.db", 
-                traits_dir="/teamspace/studios/this_studio/data/psychometric_tests/personality/trait_specific"):
+def execute_run(run_id, db_path="results/database/experiments.db"):
     """
     1) Fetch run (and experiment) data from DB.
     2) Run the DCT pipeline.
@@ -305,6 +336,7 @@ def execute_run(run_id, db_path="results/database/experiments.db",
         raise ValueError(f"trait_max_or_min must be 'max' or 'min'. Got {direction}")
 
     # 2) Extract run parameters
+    experiment_id = row["experiment_id"]
     model_name = row["model_name"]
     seed = row["seed"]
     max_new_tokens = row["max_new_tokens"]
@@ -325,24 +357,31 @@ def execute_run(run_id, db_path="results/database/experiments.db",
     input_scale_db = row["input_scale"]
     run_description = row["run_description"]
 
-    # Set seeds
+    # 2) Set seeds
     torch.set_default_device("cuda")
     torch.manual_seed(seed)
 
     hf_token = os.environ.get("HUGGINGFACE_HUB_TOKEN", None)
     if hf_token:
         login(token=hf_token)
+    
+    from experiment_manager import ExperimentManager
+    mgr = ExperimentManager(db_path)
 
-    # 3) Hardcode dataset path for now
-    dataset_path = "/teamspace/studios/this_studio/data/psychometric_tests/personality/trait_specific/max_a1_trust.csv"
+    # 3) load examples from the DB-based approach
+    examples, targets, test_examples, test_targets = load_examples_for_experiment(
+        mgr,
+        experiment_id,
+        tokenizer,
+        num_samples,
+        system_prompt=system_prompt,
+        seed=seed
+    )
+    
+    mgr.close()
 
     # 4) Prepare model & tokenizer
     model, tokenizer = prepare_model_and_tokenizer(model_name)
-
-    # 5) Load examples
-    examples, targets, test_examples, test_targets = load_examples(
-        dataset_path, tokenizer, num_samples, system_prompt, seed
-    )
 
     # 6) Create sliced model
     sliced_model = create_sliced_model(model, source_layer_idx, target_layer_idx)
