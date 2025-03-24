@@ -440,6 +440,16 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         forward_batch_size
     )
 
+    val_X, val_Y = compute_activations(
+        model, tokenizer, sliced_model,
+        val_examples,
+        source_layer_idx,
+        max_seq_len,
+        len(val_examples),
+        forward_batch_size
+    )
+
+
     # delta acts
     delta_acts_single = dct.DeltaActivations(sliced_model, target_position_indices=slice(-3,None))
     _ = vmap(delta_acts_single, in_dims=(1,None,None), out_dims=2, chunk_size=factor_batch_size)
@@ -464,6 +474,10 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         max_iters, beta
     )
 
+    NEG_TOKEN = tokenizer.encode("I would rate myself a 1", add_special_tokens=False)[0]
+    POS_TOKEN = tokenizer.encode("I would rate myself a 5", add_special_tokens=False)[0]
+    target_vec = model.lm_head.weight.data[POS_TOKEN, :] - model.lm_head.weight.data[NEG_TOKEN, :] # this won't work on current datasets, just an example
+
     # rank using the validation set to find the best feature
     slice_to_end = dct.SlicedModel(
         model,
@@ -472,7 +486,7 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         layers_name="model.layers"
     )
     delta_acts_end_single = dct.DeltaActivations(slice_to_end)
-    scores, raw_indices = rank_vectors(exp_dct, delta_acts_end_single, X, Y, forward_batch_size, factor_batch_size)
+    scores, raw_indices = rank_vectors(exp_dct, delta_acts_end_single, val_X, val_Y, target_vec, forward_batch_size, factor_batch_size)
     indices = raw_indices.cpu().int().tolist()
 
     # evaluate + capture
