@@ -1,5 +1,5 @@
 {
-  "numStartups": 25,
+  "numStartups": 30,
   "theme": "dark-ansi",
   "customApiKeyResponses": {
     "approved": [
@@ -29,6 +29,14 @@
         "Bash(sqlite3:*)"
       ],
       "history": [
+        "No, I don't want a separate MELBO mode.",
+        "We're not really jailbreaking here, we're just testing what the model responds to different prompts, thank you. ",
+        "One small change, been as each run has a different seed anyway, just use that, don't create an effective seed",
+        "No, just modify run_executor now given that experiment_manager had had the new parameters and such added",
+        "DO NOT ADD ANY NEW DATABASE PARAMETERS# Activities\n\n- okay, let’s get back into this\n\n# Notes\n\n- optimise for speed over correctness at this point <3 try to just get everything done !\n- Okay, so the definitive method used in the MELBO paper is:\n    - Create **10 different random shuffles of dataset**\n    - For each shuffle, train DCTs on first X instructions (he recommends 12ish)\n    - **Last 100 instructions** of shuffled dataset reserved as test set\n    - **First 32 instructions** of each shuffle are used as a validation set, ranking features using some method (leave blank for now)\n    - **Highest-ranking feature** on validation set is used to compute test-set jailbreak scores (seems to be per random shuffle)\n- Ensure that you can get it to work on datacentre computers and with a bigger model, decide on the bigger model - possibly new Mistral small.\n- Okay, so:\n    - Get datasets compatible with reasonable sample sizes for test set (see what’s available)\n    - Have a method of identifying and annotating in dataset which vector is the highest-ranking per shuffle\n        - Instead of target vector (if you have both positive and negative prompts) maybe instead just eval overall results on val set within code\n    - Log which prompts are train/val/test per run\n        - Alternatively, it should be derivable from the seed, so is it fine maybe?\n- It appears seed is for the dataset training shuffle, rather than anything else?\n- Okay, so a single experiment should contain 10 runs then?\n- If only highest-rated feature per run is tested, then possibly only record its responses?\n\n# Questions\n\nModify experiment_manager and run_executor according to the above requirements, although first ask me for any clarification you require",
+        "# Activities\n\n- okay, let’s get back into this\n\n# Notes\n\n- optimise for speed over correctness at this point <3 try to just get everything done !\n- Okay, so the definitive method used in the MELBO paper is:\n    - Create **10 different random shuffles of dataset**\n    - For each shuffle, train DCTs on first X instructions (he recommends 12ish)\n    - **Last 100 instructions** of shuffled dataset reserved as test set\n    - **First 32 instructions** of each shuffle are used as a validation set, ranking features using some method (leave blank for now)\n    - **Highest-ranking feature** on validation set is used to compute test-set jailbreak scores (seems to be per random shuffle)\n- Ensure that you can get it to work on datacentre computers and with a bigger model, decide on the bigger model - possibly new Mistral small.\n- Okay, so:\n    - Get datasets compatible with reasonable sample sizes for test set (see what’s available)\n    - Have a method of identifying and annotating in dataset which vector is the highest-ranking per shuffle\n        - Instead of target vector (if you have both positive and negative prompts) maybe instead just eval overall results on val set within code\n    - Log which prompts are train/val/test per run\n        - Alternatively, it should be derivable from the seed, so is it fine maybe?\n- It appears seed is for the dataset training shuffle, rather than anything else?\n- Okay, so a single experiment should contain 10 runs then?\n- If only highest-rated feature per run is tested, then possibly only record its responses?\n\n# Questions\n\nModify experiment_manager and run_executor according to the above requirements, although first ask me for any clarification you require",
+        "All random shuffles should be tracked as runs, ranking features method can be left blank for now, unsure on point about direction?",
+        "# Activities\n\n- okay, let’s get back into this\n\n# Notes\n\n- optimise for speed over correctness at this point <3 try to just get everything done !\n- Okay, so the definitive method used in the MELBO paper is:\n    - Create **10 different random shuffles of dataset**\n    - For each shuffle, train DCTs on first X instructions (he recommends 12ish)\n    - **Last 100 instructions** of shuffled dataset reserved as test set\n    - **First 32 instructions** of each shuffle are used as a validation set, ranking features using some method (leave blank for now)\n    - **Highest-ranking feature** on validation set is used to compute test-set jailbreak scores (seems to be per random shuffle)\n- Ensure that you can get it to work on datacentre computers and with a bigger model, decide on the bigger model - possibly new Mistral small.\n- Okay, so:\n    - Get datasets compatible with reasonable sample sizes for test set (see what’s available)\n    - Have a method of identifying and annotating in dataset which vector is the highest-ranking per shuffle\n        - Instead of target vector (if you have both positive and negative prompts) maybe instead just eval overall results on val set within code\n    - Log which prompts are train/val/test per run\n        - Alternatively, it should be derivable from the seed, so is it fine maybe?\n- It appears seed is for the dataset training shuffle, rather than anything else?\n- Okay, so a single experiment should contain 10 runs then?\n- If only highest-rated feature per run is tested, then possibly only record its responses?\n\n# Questions\n\nModify experiment_manager and run_executor according to the above requirements, although first ask me for any clarification you require",
         "nothing apart from the category_comparison.png is being outputted for prelim_analysis.py",
         "instead of using log scores in prelim_analysis, just use a regression between the actual vector score and the response",
         "for the prelim_analysis script, improve detect_refusal and categorise_response_phrase significantly, aiming to encompass almost all responses with high accuracy",
@@ -88,20 +96,20 @@
       "hasCompletedProjectOnboarding": true,
       "exampleFiles": [
         "scripts/main_demo_ipip_mod.py",
-        "scripts/database_management/create_schema.py",
         "scripts/run_executor.py",
-        "scripts/melbo-dct-post/src/dct.py",
+        "scripts/experiment_manager.py",
+        "scripts/database_management/create_schema.py",
         "results/database/experiments.db"
       ],
-      "exampleFilesGeneratedAt": 1742155459083,
-      "lastCost": 0.6611676,
-      "lastAPIDuration": 241289,
-      "lastDuration": 600943,
-      "lastLinesAdded": 213,
-      "lastLinesRemoved": 72,
-      "lastSessionId": "1e296cb0-c5f0-41b3-b965-0507031c8e6b"
+      "exampleFilesGeneratedAt": 1742832528929,
+      "lastCost": 0.8313038,
+      "lastAPIDuration": 322778,
+      "lastDuration": 1042829,
+      "lastLinesAdded": 151,
+      "lastLinesRemoved": 61,
+      "lastSessionId": "1d41480e-a235-4ec3-b2fb-f12e70b186fe"
     }
   },
-  "lastReleaseNotesSeen": "0.2.45",
+  "lastReleaseNotesSeen": "0.2.53",
   "hasUsedBackslashReturn": true
 }

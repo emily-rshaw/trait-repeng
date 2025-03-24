@@ -135,10 +135,6 @@ class ExperimentManager:
     #########################################################################
 
     def create_run(self, experiment_id, run_params):
-        """
-        Insert a run row into 'runs', passing all columns explicitly via run_params.
-        *Do not* store duration_in_seconds here, because run_executor will handle it.
-        """
         sql = """
         INSERT INTO runs (
             experiment_id,
@@ -160,8 +156,11 @@ class ExperimentManager:
             max_iters,
             target_ratio,
             input_scale,
+            shuffle_index,                -- new
+            val_size,                     -- new
+            test_size,                    -- new
             run_description
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
         data = (
             experiment_id,
@@ -183,11 +182,18 @@ class ExperimentManager:
             run_params["max_iters"],
             run_params["target_ratio"],
             run_params["input_scale"],
+
+            # Provide default or actual values from run_params
+            run_params["shuffle_index"],
+            run_params["val_size"],
+            run_params["test_size"],
+
             run_params.get("run_description", "")
         )
         self.cursor.execute(sql, data)
         self.conn.commit()
         return self.cursor.lastrowid
+
 
     def create_multiple_runs(self, experiment_id, list_of_run_params):
         """
@@ -266,7 +272,7 @@ def main():
         quantization_level="fp16",
         trait_id=30,
         trait_max_or_min="max",
-        description="First prompt-set integrated experiment"
+        description="MELBO methodology experiment with 10 shuffles"
     )
     print(f"Created experiment {experiment_id}")
 
@@ -276,12 +282,17 @@ def main():
         mgr.link_experiment_prompt_set(experiment_id, prompt_set_id)
 
     # 2) Define multiple run parameter dicts
+    # This follows the MELBO methodology with 10 different shuffles:
+    # - Each shuffle uses a different seed
+    # - First 32 instructions of each shuffle used as validation set
+    # - Last 100 instructions of each shuffle reserved as test set
     run_params_list = []
-    for seed in [101, 102]:
+    seeds = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
+    for i, seed in enumerate(seeds):
         rp = {
             "seed": seed,
             "max_new_tokens": 256,
-            "num_samples": 4,
+            "num_samples": 12,  # Training on first 12 instructions
             "max_seq_len": 27,
             "source_layer_idx": 10,
             "target_layer_idx": 20,
@@ -296,19 +307,25 @@ def main():
             "max_iters": 10,
             "target_ratio": 0.5,
             "input_scale": None, # if none, gets defined by code
-            "run_description": f"Demo run with seed={seed}"
+            "run_description": f"MELBO shuffle {i+1}/10 with seed={seed}",
+            "shuffle_index": i,    # Using unique index for each shuffle
+            "val_size": 32,        # First 32 instructions for validation
+            "test_size": 100       # Last 100 instructions for test
         }
         run_params_list.append(rp)
 
     # 3) Create the runs
     run_ids = mgr.create_multiple_runs(experiment_id, run_params_list)
-    print("Created runs:", run_ids)
+    print(f"Created {len(run_ids)} runs with MELBO methodology:", run_ids)
 
     # 4) Execute each run using run_executor
-    for rid in run_ids:
+    for i, rid in enumerate(run_ids):
+        print(f"Executing run {i+1}/{len(run_ids)} (ID: {rid})...")
         mgr.execute_run(rid)
+        print(f"Completed run {i+1}/{len(run_ids)}")
 
     mgr.close()
+    print("All runs completed successfully.")
 
 # This is a helper function to allow testing the entry point
 def run_main_if_module_is_main():

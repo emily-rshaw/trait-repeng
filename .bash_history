@@ -49,3 +49,11 @@ claude
 claude
 claude
 claude
+git add .
+git commit -m "first near-complete pipeline"
+git push -u origin dev
+claude
+claude
+claude
+claude
+claude

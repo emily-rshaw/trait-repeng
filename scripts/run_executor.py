@@ -36,19 +36,28 @@ def load_examples_for_experiment(
     tokenizer,
     num_samples,
     system_prompt=None,
-    seed=325
+    seed=325,
+    shuffle_index=0,
+    val_size=32,
+    test_size=100
 ):
     """
+    Following the MELBO paper methodology:
     1) Fetch all prompt sets linked to `experiment_id`.
     2) Gather (prompt_id, prompt_text, target_response) from those sets.
-    3) Shuffle & do train vs. test split (train = num_samples, test = up to 32).
-    4) For each item, apply chat template with system prompt => create final strings
+    3) Create a deterministic shuffle based on seed
+    4) Split the data into:
+       - Training: First num_samples instructions
+       - Validation: First val_size instructions (default 32) - used for ranking features
+       - Test: Last test_size instructions (default 100) - used for final evaluation
+    5) Apply chat template with system prompt => create final strings
        *BUT* also track which prompt_id each final string corresponds to.
     
     Returns:
-      examples, targets, test_examples, test_targets,
-      example_prompt_ids, test_prompt_ids
+      train_examples, train_targets, val_examples, val_targets, test_examples, test_targets,
+      train_prompt_ids, val_prompt_ids, test_prompt_ids
     """
+    # Use the seed directly for the random shuffle
     random.seed(seed)
 
     # 1) find prompt sets
@@ -76,33 +85,59 @@ def load_examples_for_experiment(
             goal = p_row["target_response"]
             all_items.append((pid, txt, goal))
 
-    # shuffle
+    # Shuffle based on the seed
     random.shuffle(all_items)
-    # slice
-    clipped = all_items[: num_samples + 32]
-    train_data = clipped[: num_samples]
-    test_data = clipped[num_samples : num_samples+32]
-
+    
+    # Ensure we have enough data
+    if len(all_items) < num_samples + test_size:
+        print(f"Warning: Not enough data for desired splits. Total items: {len(all_items)}, "
+              f"Requested: {num_samples} (train) + {test_size} (test)")
+        
+    # Split the data into train, validation, and test sets
+    # Validation set is the first val_size items of the training set
+    # Test set is the last test_size items
+    train_data = all_items[:num_samples]
+    val_data = train_data[:val_size]  # First val_size items from training data
+    test_data = all_items[-test_size:] if len(all_items) >= test_size else all_items[-min(len(all_items), test_size):]
+    
+    # Log the data split to help with debugging and tracking
+    print(f"Data split for run with seed={seed}, shuffle_index={shuffle_index}:")
+    print(f"  Total items: {len(all_items)}")
+    print(f"  Train set size: {len(train_data)} (includes validation set)")
+    print(f"  Validation set size: {len(val_data)}")
+    print(f"  Test set size: {len(test_data)}")
+    
+    # Initialize chat template if system prompt is provided
     chat_init = []
     if system_prompt:
         chat_init = [{'content': system_prompt, 'role': 'system'}]
 
     # We'll build final strings plus parallel arrays for the prompt IDs
-    examples, targets = [], []
-    test_examples, test_targets = [], []
-    example_prompt_ids, test_prompt_ids = [], []
+    train_examples, train_targets, train_prompt_ids = [], [], []
+    val_examples, val_targets, val_prompt_ids = [], [], []
+    test_examples, test_targets, test_prompt_ids = [], [], []
 
-    # TRAIN
+    # Process TRAIN data 
     for (pid, prompt_text, target_resp) in train_data:
         chat = chat_init + [{'content': prompt_text, 'role': 'user'}]
         formatted_chat = tokenizer.apply_chat_template(
             chat, add_special_tokens=False, tokenize=False, add_generation_prompt=True
         )
-        examples.append(formatted_chat)
-        targets.append(target_resp)
-        example_prompt_ids.append(pid)
+        train_examples.append(formatted_chat)
+        train_targets.append(target_resp)
+        train_prompt_ids.append(pid)
 
-    # TEST
+    # Process VAL data 
+    for (pid, prompt_text, target_resp) in val_data:
+        chat = chat_init + [{'content': prompt_text, 'role': 'user'}]
+        formatted_chat = tokenizer.apply_chat_template(
+            chat, add_special_tokens=False, tokenize=False, add_generation_prompt=True
+        )
+        val_examples.append(formatted_chat)
+        val_targets.append(target_resp)
+        val_prompt_ids.append(pid)
+
+    # Process TEST data
     for (pid, prompt_text, target_resp) in test_data:
         chat = chat_init + [{'content': prompt_text, 'role': 'user'}]
         formatted_chat = tokenizer.apply_chat_template(
@@ -112,11 +147,12 @@ def load_examples_for_experiment(
         test_targets.append(target_resp)
         test_prompt_ids.append(pid)
 
-    # Return 6 parallel lists
+    # Return 9 parallel lists (3 sets of 3 lists each)
     return (
-        examples, targets,
+        train_examples, train_targets, 
+        val_examples, val_targets,
         test_examples, test_targets,
-        example_prompt_ids, test_prompt_ids
+        train_prompt_ids, val_prompt_ids, test_prompt_ids
     )
 
 
@@ -203,14 +239,17 @@ def rank_vectors(exp_dct, delta_acts_end_single, X, Y, forward_batch_size, facto
 def evaluate_vectors_and_capture(
     model, tokenizer, model_editor, V, indices, input_scale,
     source_layer_idx, 
-    examples, test_examples, 
-    targets, test_targets,
-    example_prompt_ids, test_prompt_ids,  # new parallel lists
-    num_eval, max_new_tokens
+    train_examples, val_examples, test_examples,
+    train_targets, val_targets, test_targets,
+    train_prompt_ids, val_prompt_ids, test_prompt_ids,
+    num_eval, max_new_tokens,
+    highest_ranking_only=False  # New parameter to only evaluate the highest-ranking feature
 ):
     """
-    Similar to old evaluate_vectors_and_capture, but we also track the prompt_id
-    for each example/test item, storing them in 'steered' and 'unsteered' dict.
+    Following MELBO paper methodology:
+    - Evaluate the highest-ranking feature on validation set (if highest_ranking_only=True)
+    - Run the evaluation on test examples to compute response differences
+    - Track all prompt_ids for proper identification
     
     Returns:
       {
@@ -218,35 +257,55 @@ def evaluate_vectors_and_capture(
         "steered": {
            vec_idx_1: [(prompt_id, prompt_text, completion_text), ...],
            ...
-        }
+        },
+        "highest_ranking_idx": highest_ranking_feature_idx
       }
     """
     results = {"unsteered": [], "steered": {}}
 
-    model_editor.restore()
-    # for demonstration, we only evaluate 2 from train + 3 from test
-    examples_to_test = examples[:2] + test_examples[:3]
-    prompt_ids_to_test = example_prompt_ids[:2] + test_prompt_ids[:3]
+    # For the MELBO methodology, we primarily care about test set evaluation
+    # We'll evaluate a small sample of training examples for debugging/comparison
+    train_sample = train_examples[:2] if train_examples else []
+    train_ids_sample = train_prompt_ids[:2] if train_prompt_ids else []
+    
+    # Always evaluate all test examples according to MELBO paper
+    # (we're evaluating on the last 100 examples of the shuffled dataset)
+    examples_to_test = train_sample + test_examples
+    prompt_ids_to_test = train_ids_sample + test_prompt_ids
 
+    print(f"Evaluation on {len(examples_to_test)} examples ({len(train_sample)} train, {len(test_examples)} test)")
+    
+    # Get unsteered completions first
+    model_editor.restore()
     model_inputs = tokenizer(examples_to_test, return_tensors="pt", padding=True).to("cuda")
     unsteered_ids = model.generate(**model_inputs, max_new_tokens=max_new_tokens, do_sample=False)
     unsteered_completions = tokenizer.batch_decode(unsteered_ids, skip_special_tokens=True)
 
-    # store unsteered
+    # Store unsteered results
     for (pid, prompt_str, completion_str) in zip(prompt_ids_to_test, examples_to_test, unsteered_completions):
         results["unsteered"].append((pid, prompt_str, completion_str))
 
-    total_vecs = min(num_eval, len(indices))
-    for i in tqdm(range(total_vecs), desc="Evaluating steering vectors"):
-        vec_idx = indices[i]
+    # For MELBO method, we might only care about the highest-ranking feature
+    vectors_to_evaluate = []
+    
+    if highest_ranking_only and len(indices) > 0:
+        # Just evaluate the highest-ranking feature (indices[0])
+        vectors_to_evaluate = [indices[0]]
+        results["highest_ranking_idx"] = indices[0]
+    else:
+        # Evaluate multiple vectors (up to num_eval)
+        total_vecs = min(num_eval, len(indices))
+        vectors_to_evaluate = [indices[i] for i in range(total_vecs)]
 
+    # Evaluate the selected vectors
+    for vec_idx in tqdm(vectors_to_evaluate, desc="Evaluating steering vectors"):
         model_editor.restore()
         model_editor.steer(input_scale * V[:, vec_idx], source_layer_idx)
 
         steered_ids = model.generate(**model_inputs, max_new_tokens=max_new_tokens, do_sample=False)
         steered_completions = tokenizer.batch_decode(steered_ids, skip_special_tokens=True)
 
-        # store with prompt_id
+        # Store with prompt_id
         gathered = []
         for (pid, prompt_str, completion_str) in zip(prompt_ids_to_test, examples_to_test, steered_completions):
             gathered.append((pid, prompt_str, completion_str))
@@ -328,6 +387,11 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
     target_ratio = row["target_ratio"]
     input_scale_db = row["input_scale"]
     run_description = row["run_description"]
+    
+    # Get MELBO parameters
+    shuffle_index = row["shuffle_index"]
+    val_size = row["val_size"]
+    test_size = row["test_size"]
 
     torch.set_default_device("cuda")
     torch.manual_seed(seed)
@@ -343,18 +407,22 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
     from experiment_manager import ExperimentManager
     mgr = ExperimentManager(db_path)
 
-    # load DB-based examples with prompt IDs
+    # load DB-based examples with prompt IDs using the MELBO data split approach
     (
-        examples, targets, 
+        train_examples, train_targets, 
+        val_examples, val_targets,
         test_examples, test_targets,
-        example_prompt_ids, test_prompt_ids
+        train_prompt_ids, val_prompt_ids, test_prompt_ids
     ) = load_examples_for_experiment(
         mgr,
         experiment_id,
-        tokenizer,  # We'll set 'tokenizer' after we load the actual HF model
+        tokenizer,
         num_samples,
         system_prompt=system_prompt,
-        seed=seed
+        seed=seed,
+        shuffle_index=shuffle_index,
+        val_size=val_size,
+        test_size=test_size
     )
 
     mgr.close()
@@ -363,11 +431,11 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
     from dct import SlicedModel, DeltaActivations
     sliced_model = create_sliced_model(model, source_layer_idx, target_layer_idx)
 
-    # compute activations
-    eff_num_samples = min(num_samples, len(examples))
+    # compute activations using train examples
+    eff_num_samples = min(num_samples, len(train_examples))
     X, Y = compute_activations(
         model, tokenizer, sliced_model,
-        examples, source_layer_idx,
+        train_examples, source_layer_idx,
         max_seq_len, eff_num_samples,
         forward_batch_size
     )
@@ -396,7 +464,7 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         max_iters, beta
     )
 
-    # rank
+    # rank using the validation set to find the best feature
     slice_to_end = dct.SlicedModel(
         model,
         start_layer=source_layer_idx,
@@ -408,22 +476,32 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
     indices = raw_indices.cpu().int().tolist()
 
     # evaluate + capture
+    # MELBO approach focuses on the highest-ranking feature on test set
     from dct import ModelEditor
     model_editor = ModelEditor(model, layers_name="model.layers")
     eval_results = evaluate_vectors_and_capture(
         model, tokenizer, model_editor, V, indices,
         input_scale, source_layer_idx,
-        examples, test_examples,
-        targets, test_targets,
-        example_prompt_ids, test_prompt_ids,  # new parallel IDs
-        num_eval, max_new_tokens
+        train_examples, val_examples, test_examples,
+        train_targets, val_targets, test_targets,
+        train_prompt_ids, val_prompt_ids, test_prompt_ids,
+        num_eval, max_new_tokens,
+        highest_ranking_only=True  # MELBO focuses on highest-ranking feature
     )
 
-    # store vectors, outputs
+    # store vectors, outputs with focus on the highest-ranking feature
     # steering_vectors
     for i, vec_idx in enumerate(indices):
         vec_blob = V[:, vec_idx].detach().cpu().numpy().tobytes()
         rank_score = float(scores[i]) if i < len(scores) else None
+        
+        # Determine if this is the highest-ranking feature
+        is_highest = (i == 0)
+        
+        # If we're only storing the highest-ranking feature and this isn't it, skip
+        if eval_results.get("highest_ranking_only", False) and not is_highest:
+            continue
+            
         cursor.execute("""
             INSERT INTO steering_vectors (
                 created_by_run_id,
@@ -462,13 +540,17 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
 
     # update run
     duration = time.time() - start_time
+    
+    # Store the highest-ranking feature index if available
+    highest_ranking_idx = eval_results.get("highest_ranking_idx", None)
+    
     cursor.execute("""
         UPDATE runs
         SET duration_in_seconds = ?,
             input_scale = ?
         WHERE run_id = ?
     """, (duration, input_scale, run_id))
-
+    
     conn.commit()
     conn.close()
 
@@ -477,5 +559,6 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         "duration_in_seconds": duration,
         "input_scale": input_scale,
         "num_vectors_stored": len(indices),
+        "highest_ranking_idx": highest_ranking_idx,
         "run_description": run_description
     }
