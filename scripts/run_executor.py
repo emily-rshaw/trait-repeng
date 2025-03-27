@@ -89,7 +89,7 @@ def load_examples_for_experiment(
     random.shuffle(all_items)
     
     # Ensure we have enough data
-    if len(all_items) < num_samples + test_size:
+    if len(all_items) < num_samples + test_size + val_size:
         print(f"Warning: Not enough data for desired splits. Total items: {len(all_items)}, "
               f"Requested: {num_samples} (train) + {test_size} (test)")
         
@@ -97,13 +97,13 @@ def load_examples_for_experiment(
     # Validation set is the first val_size items of the training set
     # Test set is the last test_size items
     train_data = all_items[:num_samples]
-    val_data = train_data[:val_size]  # First val_size items from training data
+    val_data = all_items[num_samples : num_samples + val_size]
     test_data = all_items[-test_size:] if len(all_items) >= test_size else all_items[-min(len(all_items), test_size):]
     
     # Log the data split to help with debugging and tracking
     print(f"Data split for run with seed={seed}, shuffle_index={shuffle_index}:")
     print(f"  Total items: {len(all_items)}")
-    print(f"  Train set size: {len(train_data)} (includes validation set)")
+    print(f"  Train set size: {len(train_data)}")
     print(f"  Validation set size: {len(val_data)}")
     print(f"  Test set size: {len(test_data)}")
     
@@ -368,6 +368,7 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
 
     # gather run params
     experiment_id = row["experiment_id"]
+    target_vector_id = row["target_vector_id"]  # from the runs table
     model_name = row["model_name"]
     seed = row["seed"]
     max_new_tokens = row["max_new_tokens"]
@@ -402,6 +403,17 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         login(token=hf_token)
 
     model, tokenizer = prepare_model_and_tokenizer(model_name)
+
+    if target_vector_id is not None:
+        tv_row = cursor.execute("""
+            SELECT vector_data
+            FROM target_vectors
+            WHERE target_vector_id = ?
+        """, (target_vector_id,)).fetchone()
+
+        if tv_row is not None:
+            vector_blob = tv_row["vector_data"]
+            target_vec = torch.frombuffer(vector_blob, dtype=torch.float32).to(model.device)
 
     # connect to the manager to load examples
     from experiment_manager import ExperimentManager
@@ -474,10 +486,6 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         max_iters, beta
     )
 
-    NEG_TOKEN = tokenizer.encode("I would rate myself a 1", add_special_tokens=False)[0]
-    POS_TOKEN = tokenizer.encode("I would rate myself a 5", add_special_tokens=False)[0]
-    target_vec = model.lm_head.weight.data[POS_TOKEN, :] - model.lm_head.weight.data[NEG_TOKEN, :] # this won't work on current datasets, just an example
-
     # rank using the validation set to find the best feature
     slice_to_end = dct.SlicedModel(
         model,
@@ -486,7 +494,7 @@ def execute_run(run_id, db_path="results/database/experiments.db"):
         layers_name="model.layers"
     )
     delta_acts_end_single = dct.DeltaActivations(slice_to_end)
-    scores, raw_indices = rank_vectors(exp_dct, delta_acts_end_single, val_X, val_Y, target_vec, forward_batch_size, factor_batch_size)
+    scores, raw_indices = rank_vectors(exp_dct, delta_acts_end_single, val_X, val_Y, forward_batch_size, factor_batch_size)
     indices = raw_indices.cpu().int().tolist()
 
     # evaluate + capture

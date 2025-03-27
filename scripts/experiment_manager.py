@@ -10,9 +10,11 @@ Experiment Manager
 import os
 import sqlite3
 import datetime
+import torch
 
 # 1) Import the run_executor
 from run_executor import execute_run as run_dct
+from run_executor import prepare_model_and_tokenizer as prep_mod_and_tok
 
 DB_PATH = "results/database/experiments.db"
 
@@ -89,6 +91,74 @@ class ExperimentManager:
         rows = self.cursor.execute(sql, (prompt_set_id,)).fetchall()
         # Each row has 'prompt_text' and 'target_response'
         return [(r["prompt_text"], r["target_response"]) for r in rows]
+    
+    def create_target_vector(self, token_a, token_b, tokenizer, model, creation_method="diff", notes=""):
+        """
+        Creates a target vector entry in the 'target_vectors' table.
+
+        By default, 'creation_method="diff"' will compute 
+        model.lm_head.weight.data[token_b] - model.lm_head.weight.data[token_a]
+        and store it as vector_data (a BLOB).
+
+        :returns: the newly created target_vector_id
+        """
+        # 1) Convert tokens to IDs
+        token_a_ids = tokenizer.encode(token_a, add_special_tokens=False)
+        token_b_ids = tokenizer.encode(token_b, add_special_tokens=False)
+        if not token_a_ids or not token_b_ids:
+            raise ValueError(f"Could not encode tokens '{token_a}' or '{token_b}'")
+
+        token_a_id = token_a_ids[0]
+        token_b_id = token_b_ids[0]
+
+        # 2) Optionally compute the difference vector
+        target_vec = None
+        if creation_method == "diff":
+            with torch.no_grad():
+                # Grab all embeddings in lm_head for phrase A
+                emb_a = model.lm_head.weight.data[token_a_ids, :]  
+                # shape: (#tokens_in_A, d_model)
+                # Average them to get a single vector for the entire phrase
+                emb_a_mean = emb_a.mean(dim=0)  
+                # shape: (d_model,)
+
+                # Same for phrase B
+                emb_b = model.lm_head.weight.data[token_b_ids, :]
+                emb_b_mean = emb_b.mean(dim=0)
+
+                # Finally, the difference vector
+                target_vec = emb_b_mean - emb_a_mean  # shape: (d_model,)
+        else:
+            # If you have other ways to create the vector, handle them here
+            target_vec = torch.zeros(model.config.hidden_size)
+
+        # 3) Convert to BLOB
+        vector_blob = target_vec.detach().cpu().numpy().tobytes()
+
+        # 4) Insert row
+        sql = """
+        INSERT INTO target_vectors (
+            token_a,
+            token_b,
+            token_a_id,
+            token_b_id,
+            vector_data,
+            creation_method,
+            notes
+        ) VALUES (?, ?, ?, ?, ?, ?, ?)
+        """
+        self.cursor.execute(sql, (
+            token_a,
+            token_b,
+            token_a_id,
+            token_b_id,
+            vector_blob,
+            creation_method,
+            notes
+        ))
+        self.conn.commit()
+        return self.cursor.lastrowid
+
 
     #########################################################################
     #                   EXPERIMENT METHODS
@@ -270,13 +340,13 @@ def main():
     experiment_id = mgr.create_experiment(
         model_name="meta-llama/Llama-3.2-3B-Instruct",
         quantization_level="fp16",
-        trait_id=30,
+        trait_id=4,
         trait_max_or_min="max",
         description="MELBO methodology experiment with 10 shuffles"
     )
     print(f"Created experiment {experiment_id}")
 
-    desired_prompt_set_ids = [6]
+    desired_prompt_set_ids = [1]
 
     for prompt_set_id in desired_prompt_set_ids:
         mgr.link_experiment_prompt_set(experiment_id, prompt_set_id)
@@ -292,15 +362,16 @@ def main():
         rp = {
             "seed": seed,
             "max_new_tokens": 256,
-            "num_samples": 12,  # Training on first 12 instructions
+            "target_vector_id": None,
+            "num_samples": 10,  # Training on first 12 instructions
             "max_seq_len": 27,
             "source_layer_idx": 10,
             "target_layer_idx": 20,
             "num_factors": 512,
             "forward_batch_size": 1,
             "backward_batch_size": 1,
-            "factor_batch_size": 32,
-            "num_eval": 32,
+            "factor_batch_size": 128,
+            "num_eval": 128,
             "system_prompt": "You are a person",
             "dim_output_projection": 32,
             "beta": 1.0,
@@ -309,8 +380,8 @@ def main():
             "input_scale": None, # if none, gets defined by code
             "run_description": f"MELBO shuffle {i+1}/10 with seed={seed}",
             "shuffle_index": i,    # Using unique index for each shuffle
-            "val_size": 32,        # First 32 instructions for validation
-            "test_size": 100       # Last 100 instructions for test
+            "val_size": 4,        # First 32 instructions for validation
+            "test_size": 10       # Last 100 instructions for test
         }
         run_params_list.append(rp)
 
@@ -326,6 +397,20 @@ def main():
 
     mgr.close()
     print("All runs completed successfully.")
+
+def add_target_vec():
+    mgr = ExperimentManager()
+
+    model, tokenizer = prep_mod_and_tok("meta-llama/Llama-3.2-3B-Instruct")
+
+    target_vector_id = mgr.create_target_vector(
+        token_a="I would rate myself a 1",
+        token_b="I would rate myself a 5",
+        tokenizer=tokenizer,
+        model=model, 
+        creation_method="diff",
+        notes="High-response target vector"
+    )
 
 # This is a helper function to allow testing the entry point
 def run_main_if_module_is_main():

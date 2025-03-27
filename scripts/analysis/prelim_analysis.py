@@ -304,7 +304,7 @@ def main():
     FROM outputs o
     LEFT JOIN steering_vectors sv ON o.vector_id = sv.vector_id
     JOIN runs r ON o.run_id = r.run_id
-    WHERE o.run_id IN (29, 30);
+    WHERE o.run_id IN (61);
     """
     rows = cursor.execute(query).fetchall()
     columns = [desc[0] for desc in cursor.description]
